@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Read Notes</title>
+    </head>
+    <body>
+        <h1>Notes by Others</h1>
+        <ul>
+            <% notes.map(note => { %>
+            <li> <a href="/notes/<%= note._id %>"> <%= note.author %> </a></li>
+            
+            <a href='/notes/<%= note._id %>?edit=true'><button type='submit'>EDIT</button></a>
+
+            <form action='/see' method='POST'>
+            <input type='hidden' name='noteId' value='<%=note._id %>'>
+            <button type='submit'>DELETE</button>
+            </form>
+            <% }) %>
+        </ul>
+        
+    </body>
+</html>
