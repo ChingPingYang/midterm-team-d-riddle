@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail | Riddle</title>
+</head>
+<body>
+    <h1> <%= riddle.author %> </h1>
+    <h3> <%= riddle.title %> </h3>
+    <p> <%= riddle.content %> </p>
+    
+    <br>
+
+    <% if(editMode) { %>
+    <form action='/update' method='POST'>
+        <input type='hidden' name='riddleId' value='<%=riddle._id %>'>
+        <input type='text' name='title' value='<%=riddle.title %>'>
+        <input type='text' name='content' value='<%=riddle.content %>'>
+        <button type='submit'>UPDATE</button>
+    </form>
+    <%  }  %>
+
+</body>
+</html>

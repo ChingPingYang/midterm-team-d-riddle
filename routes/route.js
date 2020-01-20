@@ -4,15 +4,13 @@ const router = express.Router();
 
 router.get('/', controller.getHomePage);
 
-router.get('/write', controller.writeNote);
-router.post('/write', controller.postNote);
+router.get('/create', controller.createRiddle);
+router.post('/create', controller.postRiddle);
 
-router.get('/notes/:noteId', controller.seeNote);
+// router.get('/riddles/:riddleId', controller.detailRiddle);
 
-router.post('/see', controller.deleteNote);
+router.post('/detail', controller.deleteRiddle);
 
-router.post('/update', controller.updateNote);
-
-router.get('/read', controller.readNotes);
+router.post('/update', controller.updateRiddle);
 
 module.exports = router;

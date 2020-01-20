@@ -1,15 +1,15 @@
 const database = require('../util/database');
 const mongodb = require('mongodb');
 
-class Note {
+class Comment {
     constructor(author, title, content) {
         this.author = author;
         this.title = title;
         this.content = content;
     }
 
-    saveNote() {
-        database.getDB().collection('notes').insertOne(this)
+    saveComment() {
+        database.getDB().collection('comments').insertOne(this)
             .then(result => {
                 console.log(result);
                 console.log('success!');
@@ -20,7 +20,7 @@ class Note {
     }
 
     static getAll() {
-        return database.getDB().collection('notes').find().toArray()
+        return database.getDB().collection('comments').find().toArray()
             .then(result => {
                 console.log(result);
                 return result;
@@ -30,14 +30,14 @@ class Note {
             });
     }
 
-    static deleteNote(id) {
-        return database.getDB().collection('notes').deleteOne({_id: new mongodb.ObjectId(id)});
+    static deleteComment(id) {
+        return database.getDB().collection('comments').deleteOne({_id: new mongodb.ObjectId(id)});
     }
 
-    static updateNote(id, title, content) {
-        return database.getDB().collection('notes')
+    static updateComment(id, title, content) {
+        return database.getDB().collection('comments')
             .updateOne({_id: new mongodb.ObjectId(id)}, {$set: {title: title, content: content}});
     }
 }
 
-module.exports = Note;
+module.exports = Comment;

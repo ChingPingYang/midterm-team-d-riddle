@@ -1,48 +1,46 @@
-const Note = require('../models/note');
+const Riddle = require("../models/riddle");
+const Comment = require("../models/comment");
 
 exports.getHomePage = (req, res, next) => {
-    res.render('home');
-}
+  Riddle.getAll().then(riddles => {
+    console.log("riddles", riddles);
+    res.render("home", { riddles: riddles });
+  });
+};
 
-exports.writeNote = (req, res, next) => {
-    res.render('write');
-}
+exports.createRiddle = (req, res, next) => {
+  res.render("create");
+};
 
-exports.postNote = (req, res, next) => {
-    const note = new Note(req.body.author, req.body.title, req.body.content);
-    note.saveNote();
-    res.redirect('/');
-}
+exports.postRiddle = (req, res, next) => {
+  const riddle = new Riddle(req.body.author, req.body.title, req.body.content);
+  riddle.saveRiddle();
+  res.redirect("/");
+};
 
-exports.readNotes = (req, res, next) => {
-    Note.getAll().then(notes => {
-        res.render('read', {notes: notes});
-    });
-}
+exports.seeRiddle = (req, res, next) => {
+  const riddleId = req.params.riddleId;
+  const isEditing = req.query.edit;
 
-exports.seeNote = (req, res, next) => {
-    const noteId = req.params.noteId;
-    const isEditing = req.query.edit;
+  riddle.getAll().then(riddles => {
+    const riddle = riddles.find(nt => nt._id == riddleId);
 
-    Note.getAll().then(notes => {
-        const note = notes.find((nt) => nt._id == noteId)
+    res.render("detail", { riddle: riddle, editMode: isEditing });
+  });
+};
 
-        res.render('see', {note: note, editMode: isEditing});
-    });
-}
+exports.deleteRiddle = (req, res, next) => {
+  const riddleId = req.body.riddleId;
+  console.log(riddleId);
+  riddle.deleteRiddle(riddleId);
+  res.redirect("/home");
+};
 
-exports.deleteNote = (req, res, next) => {
-    const noteId = req.body.noteId;
-    console.log(noteId);
-    Note.deleteNote(noteId);
-    res.redirect('/read');
-}
+exports.updateRiddle = (req, res, next) => {
+  const riddleId = req.body.riddleId;
+  const title = req.body.title;
+  const content = req.body.content;
 
-exports.updateNote = (req, res, next) => {
-    const noteId = req.body.noteId;
-    const title = req.body.title;
-    const content = req.body.content;
-
-    Note.updateNote(noteId, title, content);
-    res.redirect('/notes/' + noteId);
-}
+  riddle.updateRiddle(riddleId, title, content);
+  res.redirect("/detail/" + riddleId);
+};
