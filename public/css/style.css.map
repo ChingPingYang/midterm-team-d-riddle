@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,wBAAyB;EACrB,KAAK,EAAE,GAAG",
-"sources": ["../../scss/riddle_detail.scss"],
-"names": [],
-"file": "style.css"
-}
