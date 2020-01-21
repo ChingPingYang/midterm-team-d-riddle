@@ -18,29 +18,23 @@ exports.postRiddle = (req, res, next) => {
   res.redirect("/");
 };
 
-exports.seeRiddle = (req, res, next) => {
+exports.detailRiddle = (req, res, next) => {
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
 
-  riddle.getAll().then(riddles => {
-    const riddle = riddles.find(nt => nt._id == riddleId);
-
+  Riddle.getOne(riddleId).then(riddle => {
     res.render("detail", { riddle: riddle, editMode: isEditing });
   });
 };
 
 exports.deleteRiddle = (req, res, next) => {
   const riddleId = req.body.riddleId;
-  console.log(riddleId);
-  riddle.deleteRiddle(riddleId);
-  res.redirect("/home");
+  Riddle.deleteRiddle(riddleId);
+  res.redirect("/");
 };
 
-exports.updateRiddle = (req, res, next) => {
+exports.like = async (req, res, next) => {
   const riddleId = req.body.riddleId;
-  const title = req.body.title;
-  const content = req.body.content;
-
-  riddle.updateRiddle(riddleId, title, content);
-  res.redirect("/detail/" + riddleId);
-};
+  await Riddle.like(riddleId);
+  res.redirect('/riddle/' + riddleId);
+}

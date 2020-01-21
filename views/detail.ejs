@@ -6,20 +6,21 @@
     <title>Detail | Riddle</title>
 </head>
 <body>
-    <h1> <%= riddle.author %> </h1>
-    <h3> <%= riddle.title %> </h3>
-    <p> <%= riddle.content %> </p>
-    
-    <br>
-
-    <% if(editMode) { %>
-    <form action='/update' method='POST'>
-        <input type='hidden' name='riddleId' value='<%=riddle._id %>'>
-        <input type='text' name='title' value='<%=riddle.title %>'>
-        <input type='text' name='content' value='<%=riddle.content %>'>
-        <button type='submit'>UPDATE</button>
-    </form>
-    <%  }  %>
+    <%- include('header') -%>
+    <div class="riddle-detail-container">
+        <h1><%= riddle.title %></h1>
+        <div>Author: <%= riddle.author %></div>
+        <div><%= riddle.date %></div>
+        <p><%= riddle.riddle %></p>
+        <form action='/like' method='POST'>
+            <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+            <input type='submit' name='like' value='💙'><%= riddle.like %>
+        </form>
+        <form action='/delete' method='POST'>
+            <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+            <input type='submit' name='delete' value='delete'>
+        </form>
+    </div>
 
 </body>
 </html>
