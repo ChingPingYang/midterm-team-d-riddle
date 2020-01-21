@@ -106,7 +106,3 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
-
-# database settings
-database.js
-util/
