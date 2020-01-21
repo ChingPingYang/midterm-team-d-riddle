@@ -14,10 +14,24 @@ html .nav_container, body .nav_container {
   position: absolute;
   background-color: #1254FF;
 }
+html .nav_container .nav_logo, body .nav_container .nav_logo {
+  all: unset;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  color: #fffeee;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 html .nav_container .nav_create_container, body .nav_container .nav_create_container {
   width: 93px;
   height: 93px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -27,38 +41,39 @@ html .nav_container .nav_create_container, body .nav_container .nav_create_conta
 html .nav_container .nav_create_container .nav_create_cross_container, body .nav_container .nav_create_container .nav_create_cross_container {
   width: 80%;
   height: 80%;
-  background-color: red;
+  background-color: #1254FF;
   border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
 }
 html .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross, body .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross {
   width: 39px;
   height: 3px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   background-color: #fffeee;
 }
 html .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross.vertical, body .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross.vertical {
-  transition-duration: 0.3s;
-  transform: translateX(-50%) translateY(-50%) rotate(90deg);
+  transition: 0.25s ease-in-out 0.05s;
+  transform: rotate(90deg);
 }
 html .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross.horizontal, body .nav_container .nav_create_container .nav_create_cross_container .nav_create_cross.horizontal {
-  transition-duration: 0.3s;
+  transition: 0.25s ease-in-out;
+}
+html .nav_container .nav_create_container .nav_create_cross_container:hover, body .nav_container .nav_create_container .nav_create_cross_container:hover {
+  transition: 0.25s ease-in-out;
+  box-shadow: 0px 0px 10px -3px rgba(18, 22, 71, 0.6);
 }
 html .nav_container .nav_create_container .nav_create_cross_container:hover .vertical, body .nav_container .nav_create_container .nav_create_cross_container:hover .vertical {
-  transition: 0.3s;
-  transform: translateX(-50%) translateY(-50%) rotate(180deg);
-  background-color: green;
+  transition: 0.25s ease-in-out 0.05s;
+  transform: rotate(180deg);
 }
 html .nav_container .nav_create_container .nav_create_cross_container:hover .horizontal, body .nav_container .nav_create_container .nav_create_cross_container:hover .horizontal {
-  transition-duration: 0.3s;
-  transform: translateX(-50%) translateY(-50%) rotate(90deg);
-  background-color: green;
+  transition: 0.25s ease-in-out;
+  transform: rotate(90deg);
 }
 
 /*# sourceMappingURL=home.css.map */

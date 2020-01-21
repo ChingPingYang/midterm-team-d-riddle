@@ -8,15 +8,31 @@
 html, body {
     width: 100%;
     height: 100%;
+
+    // For Nav Bar //
     .nav_container {
         width: 100%;
         height: 70px;
         position: absolute;
         background-color: $primBlue;
+        .nav_logo {
+            all: unset;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            color: $primWhite;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
         .nav_create_container {
             width: 93px;
             height: 93px;
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -25,42 +41,45 @@ html, body {
             .nav_create_cross_container {
                 width: 80%;
                 height: 80%;
-                background-color: red;
+                background-color: $primBlue;
                 border-radius: 100%;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+                cursor: pointer;
                 .nav_create_cross {
                     width: 39px;
                     height: 3px;
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
                     background-color: $primWhite;
                     &.vertical {
-                        transition-duration: 0.3s;
-                        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+                        transition: 0.25s ease-in-out 0.05s;
+                        transform: rotate(90deg);
                     }
                     &.horizontal {
-                        transition-duration: 0.3s;
+                        transition: 0.25s ease-in-out;
                     }
                 }
-
+                &:hover {
+                    transition: 0.25s ease-in-out;
+                    box-shadow: 0px 0px 10px -3px rgba($color: #121647, $alpha: 0.6);
+                }
                 &:hover .vertical {
-                    transition: 0.3s;
-                    transform: translateX(-50%) translateY(-50%) rotate(180deg);
-                    background-color: green;
+                    transition: 0.25s ease-in-out 0.05s;
+                    transform: rotate(180deg); 
                 }
                 &:hover .horizontal {
-                    transition-duration: 0.3s;
-                    transform: translateX(-50%) translateY(-50%) rotate(90deg);
-                    background-color: green;
+                    transition: 0.25s ease-in-out;
+                    transform: rotate(90deg);
                 }
             }
         }
     }
+    // Nav Bar End //
+
+
+
 }
 
