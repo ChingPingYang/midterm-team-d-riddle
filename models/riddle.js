@@ -2,16 +2,17 @@ const database = require('../util/database');
 const mongodb = require('mongodb');
 
 class Riddle {
-    constructor(author, title, content) {
-        this.author = author;
+    constructor(author, title, riddle, image_url, date) {
         this.title = title;
-        this.content = content;
+        this.author = author;
+        this.riddle = riddle;
+        this.image_url = image_url;
+        this.date = new Date();
     }
 
     saveRiddle() {
         database.getDB().collection('riddles').insertOne(this)
             .then(result => {
-                console.log(result);
                 console.log('success!');
             })
             .catch(err => {
