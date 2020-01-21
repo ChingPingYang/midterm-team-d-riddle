@@ -23,6 +23,9 @@ exports.detailRiddle = (req, res, next) => {
   const isEditing = req.query.edit;
 
   Riddle.getOne(riddleId).then(riddle => {
+    riddle.date = + ('0' + riddle.date.getDate()).slice(-2)
+    + '/' + ('0' + (riddle.date.getMonth() + 1)).slice(-2)
+      + '/' + riddle.date.getFullYear();
     res.render("detail", { riddle: riddle, editMode: isEditing });
   });
 };
@@ -36,5 +39,5 @@ exports.deleteRiddle = (req, res, next) => {
 exports.like = async (req, res, next) => {
   const riddleId = req.body.riddleId;
   await Riddle.like(riddleId);
-  res.redirect('/riddle/' + riddleId);
+  res.redirect('/riddles/' + riddleId);
 }
