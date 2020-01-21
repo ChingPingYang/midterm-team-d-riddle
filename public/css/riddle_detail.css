@@ -1,0 +1,213 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h3,
+h2,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  width: 100%;
+  background-color: aqua; }
+  body * {
+    padding: 0;
+    margin: 0; }
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  background-color: #155af4; }
+  .header-container header {
+    width: 60%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .header-container header div {
+      background-color: blue; }
+
+.riddle-detail-container {
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+  .riddle-detail-container .riddle-detail {
+    width: 62%; }
+    .riddle-detail-container .riddle-detail .title {
+      padding-top: 22px;
+      padding-bottom: 10px;
+      font-family: Didot;
+      color: #1254FF;
+      font-size: 28px; }
+    .riddle-detail-container .riddle-detail .riddle-info {
+      font-family: 'Gothic A1', sans-serif;
+      display: flex;
+      justify-content: start;
+      padding-bottom: 10px;
+      font-size: 10px;
+      font-weight: 100;
+      color: #AFA5A5; }
+      .riddle-detail-container .riddle-detail .riddle-info .author {
+        padding-right: 10px; }
+      .riddle-detail-container .riddle-detail .riddle-info .date {
+        padding-right: 10px; }
+    .riddle-detail-container .riddle-detail .content {
+      color: #AFA5A5;
+      font-size: 10px;
+      font-weight: 100;
+      padding-right: 10px;
+      padding-bottom: 20px; }
+    .riddle-detail-container .riddle-detail .form-like-container {
+      width: 100%;
+      position: relative;
+      height: 20px; }
+      .riddle-detail-container .riddle-detail .form-like-container .like-button {
+        cursor: pointer; }
+        .riddle-detail-container .riddle-detail .form-like-container .like-button svg {
+          position: absolute;
+          width: 20px;
+          left: 50%;
+          margin-left: -10px; }
+        .riddle-detail-container .riddle-detail .form-like-container .like-button .like-count {
+          color: #1254FF;
+          position: absolute;
+          left: 61%;
+          margin-left: -50px;
+          top: 2.5px; }
+    .riddle-detail-container .riddle-detail .form-delete-container {
+      width: 100%;
+      height: 20px;
+      position: relative; }
+      .riddle-detail-container .riddle-detail .form-delete-container .delete-button {
+        position: absolute;
+        right: -10%;
+        top: -20px;
+        color: #1254FF;
+        font-family: Didle;
+        font-size: 12px;
+        padding: 2px 14px;
+        background: #F5F5F5;
+        border: 1px solid #1254FF;
+        box-sizing: border-box; }
+
+/*# sourceMappingURL=riddle_detail.css.map */
