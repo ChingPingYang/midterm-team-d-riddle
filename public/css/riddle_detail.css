@@ -208,6 +208,7 @@ body {
         padding: 2px 14px;
         background: #F5F5F5;
         border: 1px solid #1254FF;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        cursor: pointer; }
 
 /*# sourceMappingURL=riddle_detail.css.map */
