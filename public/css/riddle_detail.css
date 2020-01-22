@@ -147,6 +147,7 @@ body {
       background-color: blue; }
 
 .riddle-detail-container {
+  padding-top: 80px;
   background-color: #F5F5F5;
   display: flex;
   justify-content: center;
@@ -176,7 +177,8 @@ body {
       font-size: 10px;
       font-weight: 100;
       padding-right: 10px;
-      padding-bottom: 20px; }
+      padding-bottom: 20px;
+      line-height: 15px; }
     .riddle-detail-container .riddle-detail .form-like-container {
       width: 100%;
       position: relative;
