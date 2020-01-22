@@ -1,5 +1,7 @@
 const Riddle = require("../models/riddle");
 const Comment = require("../models/comment");
+const fs = require('fs');
+const util = require('../util/util');
 
 exports.getHomePage = (req, res, next) => {
   Riddle.getAll().then(riddles => {
@@ -18,14 +20,24 @@ exports.postRiddle = (req, res, next) => {
 };
 
 exports.detailRiddle = (req, res, next) => {
+  // prepare background image
+  const bgiImgFolder = __dirname + '/../public/img/riddle_background';
+  const imgFiles = fs.readdirSync(bgiImgFolder);
+  let bgImgFile = '/img/riddle_background/default.png';
+  if (imgFiles && imgFiles.length !== 0) {
+    bgImgFile = '/img/riddle_background/' + imgFiles[Math.floor(Math.random() * Math.floor(imgFiles.length))];
+  }
+
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
 
   Riddle.getOne(riddleId).then(riddle => {
-    riddle.date = + ('0' + riddle.date.getDate()).slice(-2)
-    + '/' + ('0' + (riddle.date.getMonth() + 1)).slice(-2)
-      + '/' + riddle.date.getFullYear();
-    res.render("detail", { riddle: riddle, editMode: isEditing });
+    riddle.date = util.getFormattedDate(riddle.date);
+    res.render("detail", {
+      riddle,
+      editMode: isEditing,
+      bgImgFile
+    });
   });
 };
 
