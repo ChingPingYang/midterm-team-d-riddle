@@ -13,34 +13,34 @@ class Riddle {
 
     saveRiddle() {
         database.getDB().collection('riddles').insertOne(this)
-            .then(result => {
-                console.log('success!');
-            })
-            .catch(err => {
-                console.log(err);
-            });
+            // .then(result => {
+            //     console.log('success!');
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            // });
     }
 
     static getAll() {
         return database.getDB().collection('riddles').find().toArray()
-            .then(result => {
-                console.log("result", result)
-                return result;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+            // .then(result => {
+            //     console.log("result", result)
+            //     return result;
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            // });
     }
 
     static getOne(riddleId) {
         return database.getDB().collection('riddles').findOne({ _id: new mongodb.ObjectId(riddleId) })
-            .then(result => {
-                console.log("result", result)
-                return result;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+            // .then(result => {
+            //     console.log("result", result)
+            //     return result;
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            // });
     }
 
     static deleteRiddle(id) {
