@@ -1,0 +1,30 @@
+<div class="comment-section">
+  <form action="" method="POST">
+    <input type="text" name="author" value="" placeholder="Your name"/>
+  </form>
+  <div class="button-wrapper">
+    <a href="">
+      <div class="button button-blue">Take A Guess</div>
+    </a>
+  </div>
+  <div class="each-comment">
+    <div class="vote-count">40 people think so too</div>
+    <div class="author">James think...</div>
+    <div class="comment">
+      It is a long established fact that a reader will be distracted by the
+      readable content of a page when looking at its layout. The point of using
+      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+      as opposed to using 'Content here, content here', vv
+    </div>
+    <div class="wrap-vote">
+      <div class="agree">
+        <%- include('partials/comment/agreeSvg') -%>
+        <div class="vote-text">agree</div>
+      </div>
+      <div class="disagree">
+        <%- include('partials/comment/disagreeSvg') -%>
+        <div class="vote-text">disagree</div>
+      </div>
+    </div>
+  </div>
+</div>
