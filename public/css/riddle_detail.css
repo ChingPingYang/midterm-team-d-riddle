@@ -202,7 +202,7 @@ body {
       position: relative; }
       .riddle-detail-container .riddle-detail .form-delete-container .delete-button {
         position: absolute;
-        right: -10%;
+        right: -120px;
         top: -20px;
         color: #1254FF;
         font-family: Didle;
