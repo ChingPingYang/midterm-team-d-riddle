@@ -235,6 +235,13 @@ body {
                 background: #F5F5F5;
                 border: 1px solid #1254FF;
                 box-sizing: border-box;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: #1254FF;
+                    color: #F5F5F5;
+                }
             }
         }
     }
