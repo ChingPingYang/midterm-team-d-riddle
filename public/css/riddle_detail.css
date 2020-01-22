@@ -128,7 +128,7 @@ table {
 
 body {
   width: 100%;
-  background-color: aqua; }
+  background-color: #1F232C; }
   body * {
     padding: 0;
     margin: 0; }
@@ -158,7 +158,7 @@ body {
       padding-top: 22px;
       padding-bottom: 10px;
       font-family: Didot;
-      color: #1254FF;
+      color: #46FFA6;
       font-size: 28px; }
     .riddle-detail-container .riddle-detail .riddle-info {
       font-family: 'Gothic A1', sans-serif;
@@ -191,7 +191,7 @@ body {
           left: 50%;
           margin-left: -10px; }
         .riddle-detail-container .riddle-detail .form-like-container .like-button .like-count {
-          color: #1254FF;
+          color: #46FFA6;
           position: absolute;
           left: 61%;
           margin-left: -50px;
@@ -204,17 +204,17 @@ body {
         position: absolute;
         right: -120px;
         top: -20px;
-        color: #1254FF;
+        color: #46FFA6;
         font-family: Didle;
         font-size: 12px;
         padding: 2px 14px;
         background: #F5F5F5;
-        border: 1px solid #1254FF;
+        border: 1px solid #46FFA6;
         box-sizing: border-box;
         cursor: pointer;
         transition: 0.3s; }
         .riddle-detail-container .riddle-detail .form-delete-container .delete-button:hover {
-          background-color: #1254FF;
+          background-color: #46FFA6;
           color: #F5F5F5; }
 
 /*# sourceMappingURL=riddle_detail.css.map */
