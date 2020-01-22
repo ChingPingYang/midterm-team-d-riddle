@@ -128,10 +128,11 @@ table {
     border-spacing: 0;
 }
 
+@import "./variables";
 
 body {
     width: 100%;
-    background-color: aqua;
+    background-color: $darkBlue;
     * {
         padding: 0;
         margin: 0;
@@ -169,7 +170,7 @@ body {
             padding-top: 22px;
             padding-bottom: 10px;
             font-family: Didot;
-            color: #1254FF;
+            color: $primGreen;
             font-size: 28px;
         }
 
@@ -213,7 +214,7 @@ body {
                     margin-left: -10px;
                 }
                 .like-count {
-                    color: #1254FF;
+                    color: $primGreen;
                     position: absolute;
                     left: 61%;
                     margin-left: -50px;
@@ -230,14 +231,20 @@ body {
                 position: absolute;
                 right: -120px;
                 top: -20px;
-                color: #1254FF;
+                color: $primGreen;
                 font-family: Didle;
                 font-size: 12px;
                 padding: 2px 14px;
                 background: #F5F5F5;
-                border: 1px solid #1254FF;
+                border: 1px solid $primGreen;
                 box-sizing: border-box;
                 cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: $primGreen;
+                    color: #F5F5F5;
+                }
             }
         }
     }

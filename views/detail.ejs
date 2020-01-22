@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/riddle_detail.css" />
-    <link rel="stylesheet" href="/css/comment.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Gothic+A1&display=swap"
-      rel="stylesheet"
-    />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/riddle_detail.css">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Roboto+Mono&display=swap" rel="stylesheet">
     <title>Detail | Riddle</title>
   </head>
   <body>
     <%- include('header') -%>
     <div class="riddle-detail-container">
-      <div class="riddle-detail">
-        <h1 class="title"><%= riddle.title %></h1>
-        <div class="riddle-info">
-          <div class="author">Author: <%= riddle.author %></div>
-          <div class="date"><%= riddle.date %></div>
-          <div class="like-count"><%= riddle.like %> people like it</div>
-        </div>
-        <p class="content"><%= riddle.riddle %></p>
-        <div class="form-like-container">
-          <form action="/like" id="like" method="POST">
-            <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
-            <div
-              class="like-button"
-              onclick="document.getElementById('like').submit();"
-            >
-              <svg
-                width="24"
-                height="22"
-                viewBox="0 0 24 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.7226 4.41603L12 4.60093L12.2774 4.41603L17.9667 0.623115L23.5 5.23419V11.7658L12 21.3491L0.5 11.7658V5.23419L6.03329 0.623116L11.7226 4.41603Z"
-                  stroke="#1254FF"
-                />
-              </svg>
-              <span class="like-count"><%= riddle.like %></span>
+
+        <div class="riddle-detail">
+            <h1 class="title"><%= riddle.title %></h1>
+            <div class="riddle-info">
+                <div class="author">Author: <%= riddle.author %></div>
+                <div class="date"><%= riddle.date %></div>
+                <div class="like-count"><%= riddle.like %> people like it</div>
+            </div>
+            <p class="content"><%= riddle.riddle %></p>
+            <div class="form-like-container">
+                <form action='/like' id="like" method='POST'>
+                    <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+                    <div class="like-button" onclick="document.getElementById('like').submit();">
+                        <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7226 4.41603L12 4.60093L12.2774 4.41603L17.9667 0.623115L23.5 5.23419V11.7658L12 21.3491L0.5 11.7658V5.23419L6.03329 0.623116L11.7226 4.41603Z" stroke="#46FFA6"/>
+                        </svg>
+                            
+                        <span class="like-count"><%= riddle.like %></span>
+                    </div>
+                </form>
+            </div>
+            <div class="form-delete-container">
+                <form action='/delete' method='POST'>
+                    <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+                    <button class="delete-button" name='delete'>DELETE</button>
+                </form>
             </div>
           </form>
         </div>
