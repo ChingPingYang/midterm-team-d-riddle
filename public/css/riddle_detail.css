@@ -147,6 +147,7 @@ body {
       background-color: blue; }
 
 .riddle-detail-container {
+  padding-top: 80px;
   background-color: #F5F5F5;
   display: flex;
   justify-content: center;
@@ -176,7 +177,8 @@ body {
       font-size: 10px;
       font-weight: 100;
       padding-right: 10px;
-      padding-bottom: 20px; }
+      padding-bottom: 20px;
+      line-height: 15px; }
     .riddle-detail-container .riddle-detail .form-like-container {
       width: 100%;
       position: relative;
@@ -200,7 +202,7 @@ body {
       position: relative; }
       .riddle-detail-container .riddle-detail .form-delete-container .delete-button {
         position: absolute;
-        right: -10%;
+        right: -120px;
         top: -20px;
         color: #1254FF;
         font-family: Didle;
