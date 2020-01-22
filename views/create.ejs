@@ -3,14 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/createRiddle.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Mono:100,100i&display=swap" rel="stylesheet">
         <title>Create riddle | Riddle</title>
     </head>
 <body>
     <h1>Make Your Own Riddle</h1>
     <form action='/create' method='POST'>
-        <input type='text' name='author'>
-        <input type='text' name='title'>
-        <input type='text' name='content'>
+        <input type='text' name='title' placeholder="Title">
+        <input type='text' name='author' placeholder="Author">
+        <input type='text' name='content' placeholder="Story...">
         <button type='submit'>Done</button>
     </form>
     
