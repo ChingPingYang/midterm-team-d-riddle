@@ -1,43 +1,67 @@
-const database = require('../util/database');
-const mongodb = require('mongodb');
+const database = require("../util/database");
+const mongodb = require("mongodb");
 
 class Comment {
-    constructor(author, title, content) {
-        this.author = author;
-        this.title = title;
-        this.content = content;
-    }
+  constructor(riddleId, author, comment, upVote, downVote) {
+    this.riddleId = riddleId;
+    this.author = author;
+    this.comment = comment;
+    this.upVote = upVote;
+    this.downVote = downVote;
+  }
 
-    saveComment() {
-        database.getDB().collection('comments').insertOne(this)
-            .then(result => {
-                console.log(result);
-                console.log('success!');
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
+  saveComment() {
+    database
+      .getDB()
+      .collection("comments")
+      .insertOne(this)
+      .then(result => {
+        console.log(result);
+        console.log("success!");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-    static getAll() {
-        return database.getDB().collection('comments').find().toArray()
-            .then(result => {
-                console.log(result);
-                return result;
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
+  static getAllComment() {
+    return database
+      .getDB()
+      .collection("comments")
+      .find()
+      .toArray()
+      .then(result => {
+        console.log(result);
+        return result;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-    static deleteComment(id) {
-        return database.getDB().collection('comments').deleteOne({_id: new mongodb.ObjectId(id)});
-    }
+  static deleteComment(id) {
+    return database
+      .getDB()
+      .collection("comments")
+      .deleteOne({ _id: new mongodb.ObjectId(id) });
+  }
 
-    static updateComment(id, title, content) {
-        return database.getDB().collection('comments')
-            .updateOne({_id: new mongodb.ObjectId(id)}, {$set: {title: title, content: content}});
-    }
+  static deleteAllComment(riddleId) {
+    return database
+      .getDB()
+      .collection("comments")
+      .deleteOne({ _id: new mongodb.ObjectId(id) });
+  }
+
+  static updateComment(id, author, comment) {
+    return database
+      .getDB()
+      .collection("comments")
+      .updateOne(
+        { _id: new mongodb.ObjectId(id) },
+        { $set: { author: author, comment: comment } }
+      );
+  }
 }
 
 module.exports = Comment;

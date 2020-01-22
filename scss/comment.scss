@@ -24,6 +24,7 @@
     text-decoration: none;
   }
   .button {
+    font-family: $title_font;
     border: 1px solid $primBlue;
     color: $primBlue;
     width: 100px;
@@ -52,6 +53,7 @@
       color: $lightGray;
     }
     .author {
+      font-family: $title_font;
       margin-top: 10px;
       font-size: 40px;
       color: $primBlue;
