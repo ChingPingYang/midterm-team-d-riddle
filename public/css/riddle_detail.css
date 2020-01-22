@@ -131,7 +131,8 @@ body {
   background-color: #1F232C; }
   body * {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    font-family: "Montserrat", sans-serif; }
 
 .header-container {
   display: flex;
@@ -152,17 +153,19 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
-  width: 100%; }
+  width: 100%;
+  height: 350px;
+  min-height: 350px;
+  overflow: scroll; }
   .riddle-detail-container .riddle-detail {
     width: 62%; }
     .riddle-detail-container .riddle-detail .title {
       padding-top: 22px;
-      padding-bottom: 10px;
-      font-family: Didot;
+      padding-bottom: 20px;
+      font-family: "Roboto Mono", monospace;
       color: #46FFA6;
-      font-size: 28px; }
+      font-size: 35px; }
     .riddle-detail-container .riddle-detail .riddle-info {
-      font-family: 'Gothic A1', sans-serif;
       display: flex;
       justify-content: start;
       padding-bottom: 10px;
@@ -170,16 +173,20 @@ body {
       font-weight: 100;
       color: #AFA5A5; }
       .riddle-detail-container .riddle-detail .riddle-info .author {
-        padding-right: 10px; }
+        padding-right: 10px;
+        font-size: 14px;
+        color: #B0BFB9; }
       .riddle-detail-container .riddle-detail .riddle-info .date {
-        padding-right: 10px; }
+        padding-right: 10px;
+        font-size: 14px;
+        color: #B0BFB9; }
     .riddle-detail-container .riddle-detail .content {
-      color: #AFA5A5;
-      font-size: 10px;
+      color: #D5E8DF;
+      font-size: 17px;
       font-weight: 100;
       padding-right: 10px;
       padding-bottom: 20px;
-      line-height: 15px; }
+      line-height: 30px; }
     .riddle-detail-container .riddle-detail .form-like-container {
       width: 100%;
       position: relative;
@@ -188,27 +195,28 @@ body {
         cursor: pointer; }
         .riddle-detail-container .riddle-detail .form-like-container .like-button svg {
           position: absolute;
-          width: 20px;
+          width: 24px;
           left: 50%;
-          margin-left: -10px; }
+          transform: translateX(-50%); }
         .riddle-detail-container .riddle-detail .form-like-container .like-button .like-count {
           color: #46FFA6;
           position: absolute;
-          left: 61%;
-          margin-left: -50px;
-          top: 2.5px; }
+          left: 50%;
+          transform: translateX(100%);
+          top: 2.5px;
+          font-size: 20px; }
     .riddle-detail-container .riddle-detail .form-delete-container {
       width: 100%;
       height: 20px;
       position: relative; }
       .riddle-detail-container .riddle-detail .form-delete-container .delete-button {
         position: absolute;
-        right: -120px;
+        right: -175px;
         top: -20px;
         color: #46FFA6;
-        font-family: Didle;
-        font-size: 12px;
-        padding: 2px 14px;
+        font-family: "Roboto Mono", monospace;
+        font-size: 18px;
+        padding: 2px 26px;
         background-color: transparent;
         border: 1px solid #46FFA6;
         box-sizing: border-box;
