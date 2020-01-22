@@ -136,6 +136,7 @@ body {
     * {
         padding: 0;
         margin: 0;
+        font-family: $p_font;
     }
 }
 
@@ -163,20 +164,22 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 350px;
+    min-height: 350px;
+    overflow: scroll;
 
     .riddle-detail {
         width: 62%;
 
         .title {
             padding-top: 22px;
-            padding-bottom: 10px;
-            font-family: Didot;
+            padding-bottom: 20px;
+            font-family: $title_font;
             color: $primGreen;
-            font-size: 28px;
+            font-size: 35px;
         }
 
         .riddle-info {
-            font-family: 'Gothic A1', sans-serif;
             display: flex;
             justify-content: start;
             padding-bottom: 10px;
@@ -186,20 +189,24 @@ body {
 
             .author {
                 padding-right: 10px;
+                font-size: 14px;
+                color: $darkGray;
             }
     
             .date {
                 padding-right: 10px;
+                font-size: 14px;
+                color: $darkGray;
             }
         }
 
         .content {
-            color: #AFA5A5;
-            font-size: 10px;
+            color: $lightGray;
+            font-size: 17px;
             font-weight: 100;
             padding-right: 10px;
             padding-bottom: 20px;
-            line-height: 15px;
+            line-height: 30px;
         }
 
         .form-like-container {
@@ -210,16 +217,17 @@ body {
                 cursor: pointer;
                 svg {
                     position: absolute;
-                    width: 20px;
+                    width: 24px;
                     left: 50%;
-                    margin-left: -10px;
+                    transform: translateX(-50%);
                 }
                 .like-count {
                     color: $primGreen;
                     position: absolute;
-                    left: 61%;
-                    margin-left: -50px;
+                    left: 50%;
+                    transform: translateX(100%);
                     top: 2.5px;
+                    font-size: 20px;
                 }
             }
         }
@@ -230,12 +238,12 @@ body {
             position: relative;
             .delete-button {
                 position: absolute;
-                right: -120px;
+                right: -175px;
                 top: -20px;
                 color: $primGreen;
-                font-family: Didle;
-                font-size: 12px;
-                padding: 2px 14px;
+                font-family: $title_font;
+                font-size: 18px;
+                padding: 2px 26px;
                 background-color: transparent;
                 border: 1px solid $primGreen;
                 box-sizing: border-box;
