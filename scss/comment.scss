@@ -1,12 +1,23 @@
 @import "./variables";
 
 .comment-section {
-  background-color: $primWhite;
+  background-color: $darkBlue;
   padding: 50px 0;
 
   form {
-    input {
+    input,
+    textarea {
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+      font-size: 20px;
       border: 1px solid $primBlue;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $darkGray;
+    }
+    textarea {
+      margin-top: 20px;
     }
   }
   a {

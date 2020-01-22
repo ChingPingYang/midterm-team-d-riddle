@@ -1,9 +1,20 @@
 .comment-section {
-  background-color: #fffeee;
+  background-color: #1F232C;
   padding: 50px 0;
 }
-.comment-section form input {
+.comment-section form input,
+.comment-section form textarea {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
   border: 1px solid #1254FF;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #B0BFB9;
+}
+.comment-section form textarea {
+  margin-top: 20px;
 }
 .comment-section a {
   text-decoration: none;
@@ -32,7 +43,7 @@
   padding: 30px 40px;
 }
 .comment-section .each-comment .vote-count {
-  color: #AFA5A5;
+  color: #D5E8DF;
 }
 .comment-section .each-comment .author {
   margin-top: 10px;
@@ -40,7 +51,7 @@
   color: #1254FF;
 }
 .comment-section .each-comment .comment {
-  color: #AFA5A5;
+  color: #D5E8DF;
   margin-top: 10px;
 }
 .comment-section .each-comment .wrap-vote {
