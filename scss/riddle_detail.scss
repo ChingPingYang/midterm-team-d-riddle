@@ -159,6 +159,7 @@ body {
 .riddle-detail-container {
     padding-top: 80px;
     background-color: #F5F5F5;
+    background-size: cover;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -235,7 +236,7 @@ body {
                 font-family: Didle;
                 font-size: 12px;
                 padding: 2px 14px;
-                background: #F5F5F5;
+                background-color: transparent;
                 border: 1px solid $primGreen;
                 box-sizing: border-box;
                 cursor: pointer;
