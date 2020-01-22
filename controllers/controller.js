@@ -3,7 +3,6 @@ const Comment = require("../models/comment");
 
 exports.getHomePage = (req, res, next) => {
   Riddle.getAll().then(riddles => {
-    console.log("riddles", riddles);
     res.render("home", { riddles: riddles });
   });
 };
