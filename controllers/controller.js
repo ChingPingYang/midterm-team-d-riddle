@@ -49,9 +49,10 @@ exports.detailRiddle = (req, res, next) => {
   });
 };
 
-exports.deleteRiddle = (req, res, next) => {
+exports.deleteRiddle = async (req, res, next) => {
   const riddleId = req.body.riddleId;
-  Riddle.deleteRiddle(riddleId);
+  await Comment.deleteAllComment(riddleId);　// TODO: fix await to start those request at the same time. 
+  await Riddle.deleteRiddle(riddleId);
   res.redirect("/");
 };
 
@@ -71,5 +72,5 @@ exports.createComment = (req, res, next) => {
     0
   );
   comment.saveComment();
-  res.redirect("/");
+  res.redirect("/riddles/" + req.body.riddleId);
 };

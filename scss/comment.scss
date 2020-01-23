@@ -11,7 +11,7 @@
       margin: 0 auto;
       display: block;
       font-size: 20px;
-      border: 1px solid $primBlue;
+      border: 1px solid $primGreen;
       padding: 10px 20px;
       background-color: transparent;
       color: $darkGray;
@@ -25,8 +25,8 @@
   }
   .button {
     font-family: $title_font;
-    border: 1px solid $primBlue;
-    color: $primBlue;
+    border: 1px solid $primGreen;
+    color: $primGreen;
     width: 100px;
     text-align: center;
     padding: 5px 0;
@@ -34,8 +34,8 @@
 
   .button-blue {
     border: none;
-    background-color: $primBlue;
-    color: $primWhite;
+    background-color: $primGreen;
+    color: $darkBlue;
   }
 
   .button-wrapper {
@@ -44,7 +44,7 @@
     padding: 20px 0;
   }
   .each-comment {
-    border: 1px solid $primBlue;
+    border: 1px solid $primGreen;
     width: 60%;
     margin: 0 auto;
     padding: 30px 40px;
@@ -56,7 +56,7 @@
       font-family: $title_font;
       margin-top: 10px;
       font-size: 40px;
-      color: $primBlue;
+      color: $primGreen;
     }
     .comment {
       color: $lightGray;
@@ -67,7 +67,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      color: $primBlue;
+      color: $primGreen;
       margin-top: 20px;
 
       .agree,

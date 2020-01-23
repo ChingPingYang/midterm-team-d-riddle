@@ -15,11 +15,12 @@
       <div class="button button-blue">Take A Guess</div>
     </a>
   </div>
-  comments here <% comments.forEach( comment => {%>
-
+  <% comments.forEach( comment => {%> 
+  <% if(comment.riddle_id == riddle._id){%>
   <div class="each-comment">
-    <div class="vote-count"><%= comment.upVote %> people think so too</div>
+    <div class="vote-count"><%= comment.up_vote %> people think so too</div>
     <div class="author"><%= comment.author %> think...</div>
+
     <div class="comment">
       <%= comment.comment %>
     </div>
@@ -34,5 +35,5 @@
       </div>
     </div>
   </div>
-  <%})%>
+  <% } %> <%})%>
 </div>
