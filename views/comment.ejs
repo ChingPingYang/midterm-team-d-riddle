@@ -15,14 +15,13 @@
       <div class="button button-blue">Take A Guess</div>
     </a>
   </div>
+  comments here <% comments.forEach( comment => {%>
+
   <div class="each-comment">
-    <div class="vote-count">40 people think so too</div>
-    <div class="author">James think...</div>
+    <div class="vote-count"><%= comment.upVote %> people think so too</div>
+    <div class="author"><%= comment.author %> think...</div>
     <div class="comment">
-      It is a long established fact that a reader will be distracted by the
-      readable content of a page when looking at its layout. The point of using
-      Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-      as opposed to using 'Content here, content here', vv
+      <%= comment.comment %>
     </div>
     <div class="wrap-vote">
       <div class="agree">
@@ -35,4 +34,5 @@
       </div>
     </div>
   </div>
+  <%})%>
 </div>

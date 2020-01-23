@@ -38,10 +38,13 @@ exports.detailRiddle = (req, res, next) => {
 
   Riddle.getOne(riddleId).then(riddle => {
     riddle.date = util.getFormattedDate(riddle.date);
-    res.render("detail", {
-      riddle,
-      editMode: isEditing,
-      bgImgFile
+    Comment.getAllComment().then(comments => {
+      res.render("detail", {
+        riddle,
+        comments,
+        editMode: isEditing,
+        bgImgFile
+      });
     });
   });
 };
@@ -60,7 +63,13 @@ exports.like = async (req, res, next) => {
 };
 
 exports.createComment = (req, res, next) => {
-  const comment = new Comment(req.body.riddleId, req.body.author, req.body.comment, 0, 0);
+  const comment = new Comment(
+    req.body.riddleId,
+    req.body.author,
+    req.body.comment,
+    0,
+    0
+  );
   comment.saveComment();
   res.redirect("/");
 };
