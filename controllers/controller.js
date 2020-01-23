@@ -24,7 +24,7 @@ exports.detailRiddle = (req, res, next) => {
   const bgiImgFolder = __dirname + '/../public/img/riddle_background';
   const imgFiles = fs.readdirSync(bgiImgFolder);
   let bgImgFile = '/img/riddle_background/default.png';
-  if (imgFiles && imgFiles.length !== 0) {
+  if (imgFiles && imgFiles.length !== 1) {
     bgImgFile = '/img/riddle_background/' + imgFiles[Math.floor(Math.random() * Math.floor(imgFiles.length))];
   }
 
