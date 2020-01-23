@@ -50,7 +50,7 @@ class Comment {
     return database
       .getDB()
       .collection("comments")
-      .deleteOne({ _id: new mongodb.ObjectId(id) });
+      .deleteMany({}); // TODO:change to delete all
   }
 
   static updateComment(id, author, comment) {
