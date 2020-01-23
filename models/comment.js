@@ -50,7 +50,7 @@ class Comment {
     return database
       .getDB()
       .collection("comments")
-      .deleteMany({}); // TODO:change to delete all
+      .remove( { riddle_id: riddleId } );
   }
 
   static updateComment(id, author, comment) {
