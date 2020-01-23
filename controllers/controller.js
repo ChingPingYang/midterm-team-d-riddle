@@ -27,6 +27,9 @@ exports.detailRiddle = (req, res, next) => {
   if (imgFiles && imgFiles.length !== 1) {
     bgImgFile = '/img/riddle_background/' + imgFiles[Math.floor(Math.random() * Math.floor(imgFiles.length))];
   }
+  if (req.query.imgUrl) {
+    bgImgFile = req.query.imgUrl;
+  }
 
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
@@ -49,6 +52,7 @@ exports.deleteRiddle = (req, res, next) => {
 
 exports.like = async (req, res, next) => {
   const riddleId = req.body.riddleId;
+  const imgUrl = req.body.imgUrl;
   await Riddle.like(riddleId);
-  res.redirect('/riddles/' + riddleId);
+  res.redirect('/riddles/' + riddleId + '?imgUrl=' + imgUrl);
 }

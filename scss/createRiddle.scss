@@ -1,0 +1,164 @@
+@import './variables';
+
+@keyframes fadin {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: $darkBlue;
+ 
+    /* For Nav Bar */
+    .nav_container {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        background-color: $lightBlue;
+        .nav_logo {
+            all: unset;
+            font-family: $title_font;
+            font-size: 22px;
+            font-style: italic;
+            color: $primGreen;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 95%;
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                background-color: $primGreen;
+            }
+        }
+        .nav_create_container {
+            width: 93px;
+            height: 93px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 100%;
+            background-color: $lightBlue;
+            .nav_create_cross_container {
+                width: 80%;
+                height: 80%;
+                background-color: $lightBlue;
+                border-radius: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.25s ease-in-out;
+                cursor: pointer;
+                opacity: 0;
+                animation: fadin 1.3s ease-in;
+                animation-fill-mode: forwards;
+                .nav_create_cross {
+                    width: 39px;
+                    height: 3px;
+                    position: absolute;
+                    background-color: $primGreen;
+                    &.vertical {
+                        transition: 0.25s ease-in-out 0.05s;
+                        transform: rotate(90deg);
+                    }
+                    &.horizontal {
+                        transition: 0.25s ease-in-out;
+                    }
+                }
+                &:hover {
+                    transition: 0.25s ease-in-out;
+                    box-shadow: 0px 0px 8px 0px rgba($color: rgb(18, 20, 26), $alpha: 0.5);
+                }
+                &:hover .vertical {
+                    transition: 0.25s ease-in-out 0.05s;
+                    transform: rotate(180deg); 
+                }
+                &:hover .horizontal {
+                    transition: 0.25s ease-in-out;
+                    transform: rotate(90deg);
+                }
+            }
+            // display: none;
+        }
+    }
+    // Nav Bar End //
+
+    #body-UI {
+        padding-top: 7em;
+        text-align: center;
+
+        h1 {
+            color: $primGreen;
+            font-family: $title_font;
+            font-style: italic;
+        }
+    
+        .button {
+            padding: calc(0.73333333333em/2) calc(4.72016666667em/2);
+            background-color: inherit;
+            color: $primGreen;
+            border: solid 1px $primGreen;
+            font-family: $title_font;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    
+        .input-UI {
+            max-width: 65%;
+            margin: 0 auto;
+            
+            input[type=text] {
+                width: 100%;
+                height: 34px;
+                display: block;
+                margin: 2em 0;
+                background-color: $darkBlue;
+                color: $lightGray;
+                border: solid 1px $primGreen;
+                padding: 8px;
+                font-size: 15px;
+            }
+            textarea[type=text] {
+                width: 100%;
+                margin: 1em 0;
+                background-color: $darkBlue;
+                color: $lightGray;
+                border: solid 1px $primGreen;
+                padding: 8px;
+                font-size: 15px;
+            }
+
+            input:focus, textarea:focus {
+                outline: none;
+            }
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 50%;
+            left: 7%;
+        }
+    }
+
+}
