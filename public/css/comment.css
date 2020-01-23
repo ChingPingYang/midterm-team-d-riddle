@@ -1,0 +1,76 @@
+.comment-section {
+  background-color: #1F232C;
+  padding: 50px 0;
+}
+.comment-section form input,
+.comment-section form textarea {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
+  border: 1px solid #1254FF;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #B0BFB9;
+}
+.comment-section form textarea {
+  margin-top: 20px;
+}
+.comment-section a {
+  text-decoration: none;
+}
+.comment-section .button {
+  border: 1px solid #1254FF;
+  color: #1254FF;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+}
+.comment-section .button-blue {
+  border: none;
+  background-color: #1254FF;
+  color: #fffeee;
+}
+.comment-section .button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.comment-section .each-comment {
+  border: 1px solid #1254FF;
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+.comment-section .each-comment .vote-count {
+  color: #D5E8DF;
+}
+.comment-section .each-comment .author {
+  margin-top: 10px;
+  font-size: 40px;
+  color: #1254FF;
+}
+.comment-section .each-comment .comment {
+  color: #D5E8DF;
+  margin-top: 10px;
+}
+.comment-section .each-comment .wrap-vote {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #1254FF;
+  margin-top: 20px;
+}
+.comment-section .each-comment .wrap-vote .agree,
+.comment-section .each-comment .wrap-vote .disagree {
+  display: flex;
+  align-items: center;
+}
+.comment-section .each-comment .wrap-vote .agree {
+  margin-right: 30px;
+}
+.comment-section .each-comment .wrap-vote .vote-text {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=comment.css.map */
