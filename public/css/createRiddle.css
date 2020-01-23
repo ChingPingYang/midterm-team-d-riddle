@@ -140,6 +140,9 @@ html #body-UI .input-UI textarea[type=text], body #body-UI .input-UI textarea[ty
   padding: 8px;
   font-size: 15px;
 }
+html #body-UI .input-UI input:focus, html #body-UI .input-UI textarea:focus, body #body-UI .input-UI input:focus, body #body-UI .input-UI textarea:focus {
+  outline: none;
+}
 html #body-UI .back-arrow, body #body-UI .back-arrow {
   position: absolute;
   top: 50%;

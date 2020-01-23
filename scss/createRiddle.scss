@@ -148,6 +148,10 @@ html, body {
                 padding: 8px;
                 font-size: 15px;
             }
+
+            input:focus, textarea:focus {
+                outline: none;
+            }
         }
 
         .back-arrow {
