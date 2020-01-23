@@ -130,6 +130,15 @@ table {
 
 @import "./variables";
 
+@keyframes fadin {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
 body {
     width: 100%;
     background-color: $darkBlue;
@@ -238,6 +247,9 @@ body {
             height: 20px;
             position: relative;
             .delete-button {
+                opacity: 0;
+                animation: fadin 1.0s ease-in;
+                animation-fill-mode: forwards;
                 position: absolute;
                 right: -175px;
                 top: -20px;
