@@ -3,11 +3,11 @@ const mongodb = require("mongodb");
 
 class Comment {
   constructor(riddleId, author, comment, upVote, downVote) {
-    this.riddleId = riddleId;
+    this.riddle_id = riddleId;
     this.author = author;
     this.comment = comment;
-    this.upVote = upVote;
-    this.downVote = downVote;
+    this.up_vote = upVote;
+    this.down_vote = downVote;
   }
 
   saveComment() {
@@ -50,7 +50,7 @@ class Comment {
     return database
       .getDB()
       .collection("comments")
-      .remove( { riddle_id: riddleId } );
+      .deleteMany( { riddle_id: riddleId } );
   }
 
   static updateComment(id, author, comment) {
