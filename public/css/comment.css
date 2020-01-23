@@ -8,7 +8,7 @@
   margin: 0 auto;
   display: block;
   font-size: 20px;
-  border: 1px solid #1254FF;
+  border: 1px solid #46FFA6;
   padding: 10px 20px;
   background-color: transparent;
   color: #B0BFB9;
@@ -20,16 +20,17 @@
   text-decoration: none;
 }
 .comment-section .button {
-  border: 1px solid #1254FF;
-  color: #1254FF;
+  font-family: "Roboto Mono", monospace;
+  border: 1px solid #46FFA6;
+  color: #46FFA6;
   width: 100px;
   text-align: center;
   padding: 5px 0;
 }
 .comment-section .button-blue {
   border: none;
-  background-color: #1254FF;
-  color: #fffeee;
+  background-color: #46FFA6;
+  color: #1F232C;
 }
 .comment-section .button-wrapper {
   display: flex;
@@ -37,7 +38,7 @@
   padding: 20px 0;
 }
 .comment-section .each-comment {
-  border: 1px solid #1254FF;
+  border: 1px solid #46FFA6;
   width: 60%;
   margin: 0 auto;
   padding: 30px 40px;
@@ -46,9 +47,10 @@
   color: #D5E8DF;
 }
 .comment-section .each-comment .author {
+  font-family: "Roboto Mono", monospace;
   margin-top: 10px;
   font-size: 40px;
-  color: #1254FF;
+  color: #46FFA6;
 }
 .comment-section .each-comment .comment {
   color: #D5E8DF;
@@ -58,7 +60,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  color: #1254FF;
+  color: #46FFA6;
   margin-top: 20px;
 }
 .comment-section .each-comment .wrap-vote .agree,

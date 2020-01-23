@@ -71,5 +71,5 @@ exports.createComment = (req, res, next) => {
     0
   );
   comment.saveComment();
-  res.redirect("/");
+  res.redirect("/riddles/" + req.body.riddleId);
 };
