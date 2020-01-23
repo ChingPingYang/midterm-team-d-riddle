@@ -126,6 +126,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@keyframes fadin {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
 body {
   width: 100%;
   background-color: #1F232C; }
@@ -211,6 +216,9 @@ body {
       height: 20px;
       position: relative; }
       .riddle-detail-container .riddle-detail .form-delete-container .delete-button {
+        opacity: 0;
+        animation: fadin 1.0s ease-in;
+        animation-fill-mode: forwards;
         position: absolute;
         right: -175px;
         top: -20px;
