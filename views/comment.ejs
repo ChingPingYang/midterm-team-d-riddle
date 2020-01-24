@@ -1,0 +1,39 @@
+<div class="comment-section">
+  <form action="/comment/create" method="POST">
+    <input type="text" name="author" value="" placeholder="Your name" />
+    <textarea
+      name="comment"
+      cols="30"
+      rows="10"
+      placeholder="How do you think?"
+    ></textarea>
+    <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
+    <button class="button button-blue" type="submit">Comment</button>
+  </form>
+  <div class="button-wrapper">
+    <a href="">
+      <div class="button button-blue">Take A Guess</div>
+    </a>
+  </div>
+  <% comments.forEach( comment => {%> 
+  <% if(comment.riddle_id == riddle._id){%>
+  <div class="each-comment">
+    <div class="vote-count"><%= comment.up_vote %> people think so too</div>
+    <div class="author"><%= comment.author %> think...</div>
+
+    <div class="comment">
+      <%= comment.comment %>
+    </div>
+    <div class="wrap-vote">
+      <div class="agree">
+        <%- include('partials/comment/agreeSvg') -%>
+        <div class="vote-text">agree</div>
+      </div>
+      <div class="disagree">
+        <%- include('partials/comment/disagreeSvg') -%>
+        <div class="vote-text">disagree</div>
+      </div>
+    </div>
+  </div>
+  <% } %> <%})%>
+</div>

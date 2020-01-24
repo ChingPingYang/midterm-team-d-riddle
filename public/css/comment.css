@@ -1,0 +1,78 @@
+.comment-section {
+  background-color: #1F232C;
+  padding: 50px 0;
+}
+.comment-section form input,
+.comment-section form textarea {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
+  border: 1px solid #46FFA6;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #B0BFB9;
+}
+.comment-section form textarea {
+  margin-top: 20px;
+}
+.comment-section a {
+  text-decoration: none;
+}
+.comment-section .button {
+  font-family: "Roboto Mono", monospace;
+  border: 1px solid #46FFA6;
+  color: #46FFA6;
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+}
+.comment-section .button-blue {
+  border: none;
+  background-color: #46FFA6;
+  color: #1F232C;
+}
+.comment-section .button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.comment-section .each-comment {
+  border: 1px solid #46FFA6;
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+.comment-section .each-comment .vote-count {
+  color: #D5E8DF;
+}
+.comment-section .each-comment .author {
+  font-family: "Roboto Mono", monospace;
+  margin-top: 10px;
+  font-size: 40px;
+  color: #46FFA6;
+}
+.comment-section .each-comment .comment {
+  color: #D5E8DF;
+  margin-top: 10px;
+}
+.comment-section .each-comment .wrap-vote {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #46FFA6;
+  margin-top: 20px;
+}
+.comment-section .each-comment .wrap-vote .agree,
+.comment-section .each-comment .wrap-vote .disagree {
+  display: flex;
+  align-items: center;
+}
+.comment-section .each-comment .wrap-vote .agree {
+  margin-right: 30px;
+}
+.comment-section .each-comment .wrap-vote .vote-text {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=comment.css.map */
