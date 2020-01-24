@@ -15,9 +15,47 @@
       <div class="button button-blue">Take A Guess</div>
     </a>
   </div>
-  <% comments.forEach( comment => {%> 
-  <% if(comment.riddle_id == riddle._id){%>
+  <% comments.forEach( comment => {%> <% if(comment.riddle_id == riddle._id){%>
   <div class="each-comment">
+    <% if(editComment && editCommentId == comment._id){ %>
+    <form action="" method="POST">
+      <input type="hidden" name="commentId" value="<%= comment._id %>" />
+      <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
+      <input
+        type="text"
+        name="author"
+        value="<%= comment.author %>"
+        placeholder="Your name"
+      />
+      <textarea
+        name="comment"
+        cols="20"
+        rows="10"
+        placeholder="How do you think?"
+      >
+      <%= comment.comment %>
+      </textarea>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/update"
+      >
+        Update
+      </button>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/delete"
+      >
+        Delete
+      </button>
+    </form>
+    <% } else{ %>
+    <a
+      href="/comment/edit?commentId=<%= comment._id%>&riddleId=<%= comment.riddle_id%>"
+    >
+      <div class="menu"><%- include('partials/comment/threeDotsSvg') -%></div>
+    </a>
     <div class="vote-count"><%= comment.up_vote %> people think so too</div>
     <div class="author"><%= comment.author %> think...</div>
 
@@ -34,6 +72,7 @@
         <div class="vote-text">disagree</div>
       </div>
     </div>
+    <% } %>
   </div>
   <% } %> <%})%>
 </div>

@@ -2,6 +2,7 @@ const Riddle = require("../models/riddle");
 const Comment = require("../models/comment");
 const fs = require("fs");
 const util = require("../util/util");
+const url = require("url");
 
 exports.getHomePage = (req, res, next) => {
   Riddle.getAll().then(riddles => {
@@ -43,7 +44,9 @@ exports.detailRiddle = (req, res, next) => {
         riddle,
         comments,
         editMode: isEditing,
-        bgImgFile
+        bgImgFile,
+        editComment: req.query.editComment,
+        editCommentId: req.query.editCommentId
       });
     });
   });
@@ -51,7 +54,7 @@ exports.detailRiddle = (req, res, next) => {
 
 exports.deleteRiddle = async (req, res, next) => {
   const riddleId = req.body.riddleId;
-  await Comment.deleteAllComment(riddleId);　// TODO: fix await to start those request at the same time. 
+  await Comment.deleteAllComment(riddleId); // TODO: fix await to start those request at the same time.
   await Riddle.deleteRiddle(riddleId);
   res.redirect("/");
 };
@@ -72,5 +75,27 @@ exports.createComment = (req, res, next) => {
     0
   );
   comment.saveComment();
+  res.redirect("/riddles/" + req.body.riddleId);
+};
+
+exports.editComment = (req, res, next) => {
+  res.redirect(
+    url.format({
+      pathname: "/riddles/" + req.query.riddleId,
+      query: {
+        editComment: true,
+        editCommentId: req.query.commentId
+      }
+    })
+  );
+};
+
+exports.updateComment = async (req, res, next) => {
+  await Comment.updateComment(req.body.commentId, req.body.author, req.body.comment);
+  res.redirect("/riddles/" + req.body.riddleId);
+};
+
+exports.deleteComment = async (req, res, next) => {
+  await Comment.deleteComment(req.body.commentId);
   res.redirect("/riddles/" + req.body.riddleId);
 };

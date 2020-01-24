@@ -38,9 +38,10 @@
   padding: 20px 0;
 }
 .comment-section .each-comment {
+  position: relative;
   border: 1px solid #46FFA6;
   width: 60%;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 30px 40px;
 }
 .comment-section .each-comment .vote-count {
@@ -73,6 +74,22 @@
 }
 .comment-section .each-comment .wrap-vote .vote-text {
   margin-left: 5px;
+}
+.comment-section .each-comment .menu {
+  border-left: 1px solid #46FFA6;
+  border-bottom: 1px solid #46FFA6;
+  color: #46FFA6;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+  text-align: center;
+  padding: 5px 13px;
+}
+.comment-section .each-comment .menu:hover {
+  cursor: pointer;
+  color: #1F232C;
+  background-color: #46FFA6;
 }
 
 /*# sourceMappingURL=comment.css.map */

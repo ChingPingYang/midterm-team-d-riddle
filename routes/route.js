@@ -12,8 +12,8 @@ router.post('/like', controller.like);
 router.post('/delete', controller.deleteRiddle);
 
 router.post('/comment/create', controller.createComment);
-// router.post('/comment/update', controller.updateComment);
-// router.post('/comment/delete', controller.deleteComment);
-// router.post('/comment/deleteAll', controller.deleteAllComment);
+router.get('/comment/edit', controller.editComment);
+router.post('/comment/update', controller.updateComment);
+router.post('/comment/delete', controller.deleteComment);
 
 module.exports = router;
