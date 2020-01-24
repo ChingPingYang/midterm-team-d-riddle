@@ -44,9 +44,10 @@
     padding: 20px 0;
   }
   .each-comment {
+    position: relative;
     border: 1px solid $primGreen;
     width: 60%;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 30px 40px;
 
     .vote-count {
@@ -81,6 +82,25 @@
       }
       .vote-text {
         margin-left: 5px;
+      }
+    }
+    .menu {
+      // TODO: put together border style
+      border-left: 1px solid $primGreen;
+      border-bottom: 1px solid $primGreen;
+      color: $primGreen;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: 0.5s;
+      // width: 20px;
+      text-align: center;
+      padding: 5px 13px;
+
+      &:hover {
+        cursor: pointer;
+        color: $darkBlue;
+        background-color: $primGreen;
       }
     }
   }
