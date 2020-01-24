@@ -115,6 +115,13 @@ html #body-UI .button, body #body-UI .button {
   font-family: "Roboto Mono", monospace;
   font-size: 18px;
   cursor: pointer;
+  transform: translateY(0px);
+  transition: 0.25s ease-in-out;
+}
+html #body-UI .button:hover, body #body-UI .button:hover {
+  transition: 0.25s ease-in-out;
+  transform: translateY(-8px);
+  box-shadow: 5px 10px 13px 0px rgba(18, 20, 26, 0.7);
 }
 html #body-UI .input-UI, body #body-UI .input-UI {
   max-width: 65%;
@@ -147,6 +154,11 @@ html #body-UI .back-arrow, body #body-UI .back-arrow {
   position: absolute;
   top: 50%;
   left: 7%;
+}
+html #body-UI .back-arrow:hover, body #body-UI .back-arrow:hover {
+  transition: 0.25s ease-in-out;
+  transform: translateX(-8px);
+  filter: drop-shadow(5px 10px 13px 0px rgba(18, 20, 26, 0.7));
 }
 
 /*# sourceMappingURL=createRiddle.css.map */
