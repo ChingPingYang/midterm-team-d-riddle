@@ -4,8 +4,11 @@ const fs = require('fs');
 const util = require('../util/util');
 
 exports.getHomePage = (req, res, next) => {
-  Riddle.getAll().then(riddles => {
-    res.render("home", { riddles: riddles });
+  const filter = req.query.filter;
+  Riddle.getAll().then( async riddles => {
+    // Filter the riddles here //
+    let sortedRiddles = await util.filterRiddle(filter, riddles)
+    res.render("home", { riddles: sortedRiddles, filter });
   });
 };
 
