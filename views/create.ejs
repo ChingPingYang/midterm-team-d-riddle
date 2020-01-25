@@ -14,17 +14,16 @@
         
         <h1>Make Your Own Riddle</h1>
 
-        <form action='/create' method='POST'>
+        <form id="submission" action='/create' method='POST'>
 
                 <div class="input-UI">
-                    <input type='text' name='title' placeholder=" Title">
-                    <input type='text' name='author' placeholder=" Author">
-                    <!-- <input type='text' name='content' placeholder="Story..."> -->
+                    <input type='text' name='title' placeholder=" Title" autocomplete="off">
+                    <input type='text' name='author' placeholder=" Author" autocomplete="off">
                     <textarea type='text' name='content' cols='30' rows='18' placeholder=" Story..."></textarea>
                 </div>
                 
                 <div>
-                    <button class="button" type='submit'>Done</button>
+                    <button id="btnSubmit" class="button" type='button' onclick="pvDbForm()">Done</button>
                 </div>
         </form>
         <a class="back-arrow" href="/">
@@ -34,5 +33,8 @@
             </svg>
         </a>
     </div>
+
+    <script src="script/preventDuplicateSubmission.js"></script>
+
 </body>
 </html>
