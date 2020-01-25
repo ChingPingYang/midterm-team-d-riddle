@@ -5,9 +5,9 @@ const url = require("url");
 
 exports.getHomePage = (req, res, next) => {
   const filter = req.query.filter;
-  Riddle.getAll().then( async riddles => {
+  Riddle.getAll().then(async riddles => {
     // Filter the riddles here //
-    let sortedRiddles = await util.filterRiddle(filter, riddles)
+    let sortedRiddles = await util.filterRiddle(filter, riddles);
     res.render("home", { riddles: sortedRiddles, filter });
   });
 };
@@ -17,7 +17,12 @@ exports.createRiddle = (req, res, next) => {
 };
 
 exports.postRiddle = (req, res, next) => {
-  const riddle = new Riddle(req.body.author, req.body.title, req.body.content, util.getRandomBgImg());
+  const riddle = new Riddle(
+    req.body.author,
+    req.body.title,
+    req.body.content,
+    util.getRandomBgImg()
+  );
   riddle.saveRiddle();
   res.redirect("/");
 };
@@ -37,7 +42,8 @@ exports.detailRiddle = (req, res, next) => {
         editMode: isEditing,
         bgImgFile,
         editComment: req.query.editComment,
-        editCommentId: req.query.editCommentId
+        editCommentId: req.query.editCommentId,
+        createComment: req.query.createComment
       });
     });
   });
@@ -55,6 +61,17 @@ exports.like = async (req, res, next) => {
   const imgUrl = req.body.imgUrl;
   await Riddle.like(riddleId);
   res.redirect("/riddles/" + riddleId + "?imgUrl=" + imgUrl);
+};
+
+exports.showCommentForm = (req, res, next) => {
+  res.redirect(
+    url.format({
+      pathname: "/riddles/" + req.query.riddleId,
+      query: {
+        createComment: true
+      }
+    })
+  );
 };
 
 exports.createComment = (req, res, next) => {
@@ -82,7 +99,11 @@ exports.editComment = (req, res, next) => {
 };
 
 exports.updateComment = async (req, res, next) => {
-  await Comment.updateComment(req.body.commentId, req.body.author, req.body.comment);
+  await Comment.updateComment(
+    req.body.commentId,
+    req.body.author,
+    req.body.comment
+  );
   res.redirect("/riddles/" + req.body.riddleId);
 };
 

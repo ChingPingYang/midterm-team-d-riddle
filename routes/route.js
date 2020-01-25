@@ -11,6 +11,7 @@ router.get('/riddles/:riddleId', controller.detailRiddle);
 router.post('/like', controller.like);
 router.post('/delete', controller.deleteRiddle);
 
+router.get('/comment/create', controller.showCommentForm);
 router.post('/comment/create', controller.createComment);
 router.get('/comment/edit', controller.editComment);
 router.post('/comment/update', controller.updateComment);

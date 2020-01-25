@@ -19,6 +19,21 @@
     textarea {
       margin-top: 20px;
     }
+
+    .button-comment {
+      display: block;
+      margin: 30px auto 100px;
+      color: $primGreen;
+      border: 1px solid $primGreen;
+      background-color: transparent;
+
+      &:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        color: $darkBlue;
+        background-color: $primGreen;
+      }
+    }
   }
   a {
     text-decoration: none;
@@ -92,12 +107,11 @@
       position: absolute;
       top: 0;
       right: 0;
-      transition: 0.5s;
-      // width: 20px;
       text-align: center;
       padding: 5px 13px;
 
       &:hover {
+        transition: 0.5s;
         cursor: pointer;
         color: $darkBlue;
         background-color: $primGreen;

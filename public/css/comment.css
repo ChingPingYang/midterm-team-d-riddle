@@ -16,6 +16,19 @@
 .comment-section form textarea {
   margin-top: 20px;
 }
+.comment-section form .button-comment {
+  display: block;
+  margin: 30px auto 100px;
+  color: #46FFA6;
+  border: 1px solid #46FFA6;
+  background-color: transparent;
+}
+.comment-section form .button-comment:hover {
+  transition: 0.5s;
+  cursor: pointer;
+  color: #1F232C;
+  background-color: #46FFA6;
+}
 .comment-section a {
   text-decoration: none;
 }
@@ -82,11 +95,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  transition: 0.5s;
   text-align: center;
   padding: 5px 13px;
 }
 .comment-section .each-comment .menu:hover {
+  transition: 0.5s;
   cursor: pointer;
   color: #1F232C;
   background-color: #46FFA6;
