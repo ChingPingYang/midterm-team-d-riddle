@@ -40,12 +40,6 @@
             </div>
           </form>
         </div>
-        <div class="form-delete-container">
-          <form action="/delete" method="POST">
-            <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
-            <button class="delete-button" name="delete">DELETE</button>
-          </form>
-        </div>
       </div>
     </div>
     <%- include('comment') -%>

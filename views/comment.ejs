@@ -1,4 +1,5 @@
 <div class="comment-section">
+  <% if(createComment){ %>
   <form action="/comment/create" method="POST">
     <input type="text" name="author" value="" placeholder="Your name" />
     <textarea
@@ -8,14 +9,18 @@
       placeholder="How do you think?"
     ></textarea>
     <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
-    <button class="button button-blue" type="submit">Comment</button>
+    <button class="button button-blue button-comment" type="submit">Comment</button>
   </form>
+  <% } %>
+  <% if(!editComment && !createComment){ %>
   <div class="button-wrapper">
-    <a href="">
+    <a href="/comment/create?riddleId=<%= riddle._id%>">
       <div class="button button-blue">Take A Guess</div>
     </a>
   </div>
-  <% comments.forEach( comment => {%> <% if(comment.riddle_id == riddle._id){%>
+  <% } %> 
+  <% comments.forEach( comment => {%> <% if(comment.riddle_id ==
+  riddle._id){%>
   <div class="each-comment">
     <% if(editComment && editCommentId == comment._id){ %>
     <form action="" method="POST">
