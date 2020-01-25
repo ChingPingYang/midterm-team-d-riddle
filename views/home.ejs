@@ -10,6 +10,23 @@
   <body>
     <%- include ('partials/nav') %>
 
+    <div class="filter_container">
+      <form action="/" method="GET" >
+        
+        <div class="filter_arrow">
+          <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.09059 9.54501L0.65171 1.78703C0.419407 1.45567 0.656447 1 1.06112 1L11.9389 1C12.3436 1 12.5806 1.45567 12.3483 1.78703L6.90941 9.54501C6.71033 9.82898 6.28967 9.82898 6.09059 9.54501Z" stroke="#46FFA6"/>
+          </svg>    
+        </div>
+
+        <select name="filter" onchange="this.form.submit()">
+          <option <%= filter === "latest"? 'selected' : ''%> value="latest">Latest</option>
+          <option <%= filter === "oldest"? 'selected' : ''%> value="oldest">Oldest</option>
+          <option <%= filter === "likes"? 'selected' : ''%> value="likes">Likes</option> 
+        </select>
+      </form>
+    </div>
+
     <main class="home_mainContainer">
         <% riddles.forEach( riddle => {%>
           <a href="/riddles/<%= riddle._id%>" class="home_card_container">

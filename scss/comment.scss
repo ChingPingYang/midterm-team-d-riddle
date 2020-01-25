@@ -1,0 +1,121 @@
+@import "./variables";
+
+.comment-section {
+  background-color: $darkBlue;
+  padding: 50px 0;
+
+  form {
+    input,
+    textarea {
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+      font-size: 20px;
+      border: 1px solid $primGreen;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: $darkGray;
+    }
+    textarea {
+      margin-top: 20px;
+    }
+
+    .button-comment {
+      display: block;
+      margin: 30px auto 100px;
+      color: $primGreen;
+      border: 1px solid $primGreen;
+      background-color: transparent;
+
+      &:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        color: $darkBlue;
+        background-color: $primGreen;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .button {
+    font-family: $title_font;
+    border: 1px solid $primGreen;
+    color: $primGreen;
+    width: 100px;
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  .button-blue {
+    border: none;
+    background-color: $primGreen;
+    color: $darkBlue;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .each-comment {
+    position: relative;
+    border: 1px solid $primGreen;
+    width: 60%;
+    margin: 40px auto;
+    padding: 30px 40px;
+
+    .vote-count {
+      color: $lightGray;
+    }
+    .author {
+      font-family: $title_font;
+      margin-top: 10px;
+      font-size: 40px;
+      color: $primGreen;
+    }
+    .comment {
+      color: $lightGray;
+      margin-top: 10px;
+    }
+
+    .wrap-vote {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: $primGreen;
+      margin-top: 20px;
+
+      .agree,
+      .disagree {
+        display: flex;
+        align-items: center;
+      }
+
+      .agree {
+        margin-right: 30px;
+      }
+      .vote-text {
+        margin-left: 5px;
+      }
+    }
+    .menu {
+      // TODO: put together border style
+      border-left: 1px solid $primGreen;
+      border-bottom: 1px solid $primGreen;
+      color: $primGreen;
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      padding: 5px 13px;
+
+      &:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        color: $darkBlue;
+        background-color: $primGreen;
+      }
+    }
+  }
+}

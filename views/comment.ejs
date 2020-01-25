@@ -1,0 +1,94 @@
+<div class="comment-section">
+  <% if(createComment){ %>
+  <form action="/comment/create" method="POST">
+    <input type="text" name="author" value="" placeholder="Your name" />
+    <textarea
+      name="comment"
+      cols="30"
+      rows="10"
+      placeholder="How do you think?"
+    ></textarea>
+    <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
+    <button class="button button-blue button-comment" type="submit">Comment</button>
+  </form>
+  <% } %>
+  <% if(!editComment && !createComment){ %>
+  <div class="button-wrapper">
+    <a href="/comment/create?riddleId=<%= riddle._id%>">
+      <div class="button button-blue">Take A Guess</div>
+    </a>
+  </div>
+  <% } %> 
+  <% comments.forEach( comment => {%> <% if(comment.riddle_id ==
+  riddle._id){%>
+  <div class="each-comment">
+    
+    <% if(editComment && editCommentId == comment._id){ %>
+    <form action="" method="POST">
+      <input type="hidden" name="commentId" value="<%= comment._id %>" />
+      <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
+      <input
+        type="text"
+        name="author"
+        value="<%= comment.author %>"
+        placeholder="Your name"
+      />
+      <textarea
+        name="comment"
+        cols="20"
+        rows="10"
+        placeholder="How do you think?"
+      >
+      <%= comment.comment %>
+      </textarea>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/update"
+      >
+        Update
+      </button>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/delete"
+      >
+        Delete
+      </button>
+    </form>
+    <% } else{ %>
+    <a
+      href="/comment/edit?commentId=<%= comment._id%>&riddleId=<%= comment.riddle_id%>"
+    >
+      <div class="menu"><%- include('partials/comment/threeDotsSvg') -%></div>
+    </a>
+    <div class="vote-count"><%= comment.vote %> people think so too</div>
+    <div class="author"><%= comment.author %> thinks...</div>
+
+    <div class="comment">
+      <%= comment.comment %>
+    </div>
+    <div class="wrap-vote">
+      <form action="/comment/vote" id="agree" method="POST">
+        <input type="hidden" name="id" value="<%= comment._id%>">
+        <input type="hidden" name="vote" value="agree">
+        <input type="hidden" name="riddle_id" value="<%= riddle._id%>">
+        <div class="agree" onclick="document.getElementById('agree').submit();">
+          <%- include('partials/comment/agreeSvg') -%>
+          <div class="vote-text">agree</div>
+        </div>
+      </form>
+      <form action="/comment/vote" id="disagree" method="POST">
+        <input type="hidden" name="id" value="<%= comment._id%>">
+        <input type="hidden" name="vote" value="disagree">
+        <input type="hidden" name="riddle_id" value="<%= riddle._id%>">
+        <div class="disagree" onclick="document.getElementById('disagree').submit();">
+          <%- include('partials/comment/disagreeSvg') -%>
+          <div class="vote-text">disagree</div>
+        </div>
+      </form>
+    </div>
+    <% } %>
+  </div>
+  <% } %> <%})%>
+</div>

@@ -11,4 +11,12 @@ router.get('/riddles/:riddleId', controller.detailRiddle);
 router.post('/like', controller.like);
 router.post('/delete', controller.deleteRiddle);
 
+router.get('/comment/create', controller.showCommentForm);
+router.post('/comment/create', controller.createComment);
+router.post('/comment/vote', controller.commentVote);
+
+router.get('/comment/edit', controller.editComment);
+router.post('/comment/update', controller.updateComment);
+router.post('/comment/delete', controller.deleteComment);
+
 module.exports = router;
