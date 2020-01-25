@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 exports.getFormattedDate = date => {
   return ('0' + date.getDate()).slice(-2)
     + '/' + ('0' + (date.getMonth() + 1)).slice(-2)
@@ -59,4 +61,16 @@ exports.filterRiddle = (filter , riddles) => {
   } catch (err) {
     console.log(err)
   }
+}
+
+exports.getRandomBgImg = () => {
+  const bgiImgFolder = __dirname + "/../public/img/riddle_background";
+  const imgFiles = fs.readdirSync(bgiImgFolder);
+  let bgImgFile = '/img/riddle_background/default.png';
+  if (imgFiles && imgFiles.length !== 1) {
+    bgImgFile =
+      "/img/riddle_background/" +
+      imgFiles[Math.floor(Math.random() * Math.floor(imgFiles.length))];
+  }
+  return bgImgFile;
 }

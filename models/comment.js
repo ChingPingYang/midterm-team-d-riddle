@@ -30,7 +30,6 @@ class Comment {
       .find()
       .toArray()
       .then(result => {
-        console.log(result);
         return result;
       })
       .catch(err => {

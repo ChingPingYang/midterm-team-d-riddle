@@ -1,4 +1,5 @@
 <div class="comment-section">
+  <% if(createComment){ %>
   <form action="/comment/create" method="POST">
     <input type="text" name="author" value="" placeholder="Your name" />
     <textarea
@@ -8,18 +9,62 @@
       placeholder="How do you think?"
     ></textarea>
     <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
-    <button class="button button-blue" type="submit">Comment</button>
+    <button class="button button-blue button-comment" type="submit">Comment</button>
   </form>
+  <% } %>
+  <% if(!editComment && !createComment){ %>
   <div class="button-wrapper">
-    <a href="">
+    <a href="/comment/create?riddleId=<%= riddle._id%>">
       <div class="button button-blue">Take A Guess</div>
     </a>
   </div>
-  <% comments.forEach( comment => {%> 
-  <% if(comment.riddle_id == riddle._id){%>
+  <% } %> 
+  <% comments.forEach( comment => {%> <% if(comment.riddle_id ==
+  riddle._id){%>
   <div class="each-comment">
     <div class="vote-count"><%= comment.vote %> people think so too</div>
     <div class="author"><%= comment.author %> thinks...</div>
+    <% if(editComment && editCommentId == comment._id){ %>
+    <form action="" method="POST">
+      <input type="hidden" name="commentId" value="<%= comment._id %>" />
+      <input type="hidden" name="riddleId" value="<%= riddle._id %>" />
+      <input
+        type="text"
+        name="author"
+        value="<%= comment.author %>"
+        placeholder="Your name"
+      />
+      <textarea
+        name="comment"
+        cols="20"
+        rows="10"
+        placeholder="How do you think?"
+      >
+      <%= comment.comment %>
+      </textarea>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/update"
+      >
+        Update
+      </button>
+      <button
+        class="button button-blue"
+        type="submit"
+        formaction="/comment/delete"
+      >
+        Delete
+      </button>
+    </form>
+    <% } else{ %>
+    <a
+      href="/comment/edit?commentId=<%= comment._id%>&riddleId=<%= comment.riddle_id%>"
+    >
+      <div class="menu"><%- include('partials/comment/threeDotsSvg') -%></div>
+    </a>
+    <div class="vote-count"><%= comment.up_vote %> people think so too</div>
+    <div class="author"><%= comment.author %> think...</div>
 
     <div class="comment">
       <%= comment.comment %>
@@ -44,6 +89,7 @@
         </div>
       </form>
     </div>
+    <% } %>
   </div>
   <% } %> <%})%>
 </div>
