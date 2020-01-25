@@ -39,6 +39,7 @@ exports.detailRiddle = (req, res, next) => {
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
 
+
   Riddle.getOne(riddleId).then(riddle => {
     riddle.date = util.getFormattedDate(riddle.date);
     Comment.getAllComment().then(comments => {
@@ -72,8 +73,14 @@ exports.createComment = (req, res, next) => {
     req.body.author,
     req.body.comment,
     0,
-    0
   );
   comment.saveComment();
   res.redirect("/riddles/" + req.body.riddleId);
 };
+
+exports.commentVote = async (req, res, next) => {
+  const { id, vote, riddle_id } = req.body;
+  let value = vote == 'agree'? 1: -1;
+  await Comment.voteComment(id, value)
+  res.redirect(`/riddles/${riddle_id}`)
+}
