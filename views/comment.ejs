@@ -22,8 +22,7 @@
   <% comments.forEach( comment => {%> <% if(comment.riddle_id ==
   riddle._id){%>
   <div class="each-comment">
-    <div class="vote-count"><%= comment.vote %> people think so too</div>
-    <div class="author"><%= comment.author %> thinks...</div>
+    
     <% if(editComment && editCommentId == comment._id){ %>
     <form action="" method="POST">
       <input type="hidden" name="commentId" value="<%= comment._id %>" />
@@ -63,8 +62,8 @@
     >
       <div class="menu"><%- include('partials/comment/threeDotsSvg') -%></div>
     </a>
-    <div class="vote-count"><%= comment.up_vote %> people think so too</div>
-    <div class="author"><%= comment.author %> think...</div>
+    <div class="vote-count"><%= comment.vote %> people think so too</div>
+    <div class="author"><%= comment.author %> thinks...</div>
 
     <div class="comment">
       <%= comment.comment %>
