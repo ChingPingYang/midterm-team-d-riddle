@@ -69,20 +69,20 @@
       <%= comment.comment %>
     </div>
     <div class="wrap-vote">
-      <form action="/comment/vote" id="<%= comment._id%>" method="POST">
+      <form action="/comment/vote" id="up<%= comment._id%>" method="POST">
         <input type="hidden" name="id" value="<%= comment._id%>">
         <input type="hidden" name="vote" value="agree">
         <input type="hidden" name="riddle_id" value="<%= riddle._id%>">
-        <div class="agree" onclick="document.getElementById('<%= comment._id%>').submit();">
+        <div class="agree" onclick="document.getElementById('up<%= comment._id%>').submit();">
           <%- include('partials/comment/agreeSvg') -%>
           <div class="vote-text">agree</div>
         </div>
       </form>
-      <form action="/comment/vote" id="<%= comment._id%>" method="POST">
+      <form action="/comment/vote" id="down<%= comment._id%>" method="POST">
         <input type="hidden" name="id" value="<%= comment._id%>">
         <input type="hidden" name="vote" value="disagree">
         <input type="hidden" name="riddle_id" value="<%= riddle._id%>">
-        <div class="disagree" onclick="document.getElementById('<%= comment._id%>').submit();">
+        <div class="disagree" onclick="document.getElementById('down<%= comment._id%>').submit();">
           <%- include('partials/comment/disagreeSvg') -%>
           <div class="vote-text">disagree</div>
         </div>
