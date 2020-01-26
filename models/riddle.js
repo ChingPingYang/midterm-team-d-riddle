@@ -2,16 +2,16 @@ const database = require('../util/database');
 const mongodb = require('mongodb');
 
 class Riddle {
-  constructor(author, title, riddle, image_url, date) {
+  constructor(author, title, riddle, imageUrl, like, date = new Date()) {
     this.title = title;
     this.author = author;
     this.riddle = riddle;
-    this.like = 0;
-    this.image_url = image_url;
-    this.date = new Date();
+    this.like = like;
+    this.image_url = imageUrl;
+    this.date = date;
   }
 
-  saveRiddle() {
+  save() {
     database.getDB().collection('riddles').insertOne(this);
   }
 
@@ -19,17 +19,12 @@ class Riddle {
     return database.getDB().collection('riddles').find().toArray()
   }
 
-  static getOne(riddleId) {
-    return database.getDB().collection('riddles').findOne({ _id: new mongodb.ObjectId(riddleId) })
+  static get(id) {
+    return database.getDB().collection('riddles').findOne({ _id: new mongodb.ObjectId(id) })
   }
 
-  static deleteRiddle(id) {
+  static delete(id) {
     return database.getDB().collection('riddles').deleteOne({_id: new mongodb.ObjectId(id)});
-  }
-
-  static updateRiddle(id, title, content) {
-    return database.getDB().collection('riddles')
-      .updateOne({_id: new mongodb.ObjectId(id)}, {$set: {title: title, content: content}});
   }
 
   static async like(id) {
