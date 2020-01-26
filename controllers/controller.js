@@ -50,7 +50,7 @@ exports.detailRiddle = (req, res, next) => {
 
 exports.deleteRiddle = async (req, res, next) => {
   const riddleId = req.body.riddleId;
-  await Comment.deleteAllComment(riddleId); // TODO: fix await to start those request at the same time.
+  Comment.deleteAllComment(riddleId);
   await Riddle.deleteRiddle(riddleId);
   res.redirect("/");
 };
