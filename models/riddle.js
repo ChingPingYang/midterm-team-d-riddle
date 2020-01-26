@@ -2,7 +2,7 @@ const database = require('../util/database');
 const mongodb = require('mongodb');
 
 class Riddle {
-  constructor(author, title, riddle, imageUrl, like, date = new Date()) {
+  constructor(author, title, riddle, imageUrl, like = 0, date = new Date()) {
     this.title = title;
     this.author = author;
     this.riddle = riddle;
@@ -31,7 +31,7 @@ class Riddle {
     const collection = database.getDB().collection('riddles');
     const whereClause = { _id: new mongodb.ObjectId(id) };
     const riddle = await collection.findOne(whereClause);
-    return await collection.updateOne(whereClause, { $set: { like: ++riddle.like } });
+    return collection.updateOne(whereClause, { $set: { like: ++riddle.like } });
   }
 }
 
