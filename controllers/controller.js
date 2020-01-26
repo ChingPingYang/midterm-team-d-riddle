@@ -28,10 +28,8 @@ exports.postRiddle = (req, res, next) => {
 };
 
 exports.detailRiddle = (req, res, next) => {
-  // prepare background image
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
-
 
   Riddle.getOne(riddleId).then(riddle => {
     riddle.date = util.getFormattedDate(riddle.date);

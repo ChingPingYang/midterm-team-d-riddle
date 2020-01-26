@@ -38,8 +38,7 @@ class Comment {
   }
 
   static getOneComment(commentId) {
-    return database.getDB().collection('comments').findOne({ _id: new mongodb.ObjectId(commentId) })
-        
+    return database.getDB().collection('comments').findOne({ _id: new mongodb.ObjectId(commentId) });
   }
 
   static deleteComment(id) {
