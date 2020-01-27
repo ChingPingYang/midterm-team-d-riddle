@@ -1,5 +1,6 @@
 # Riddles!
-This is a riddle website that you can post and answer riddle. Also you can edit and delete riddle.
+This is a team project to make website using Node.js. We made a riddle website that you can post and answer riddle. Also you can edit and delete riddle.  
+We made CRUD function using Node.js, Express.js, MongoDB Atlas to manage riddle and comment. For front end side, we used ejs that is Embedded JavaScript templating language to show data.
 
 <br/>
 
