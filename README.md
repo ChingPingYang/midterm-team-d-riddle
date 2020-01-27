@@ -50,5 +50,5 @@ We splitted tasks by function. Each person was in charge of UI to function so ev
 - [Marcus](https://github.com/naoyama88) - Riddle detail, Like function
 - [Tatsuya](https://github.com/tatsuya167) - Create riddle
 - [Yesl](https://github.com/Yesl92) - Design
-- [James](https://github.com/ChingPingYang) - Riddle List, Design
+- [James](https://github.com/ChingPingYang) - Riddle List, Design, Like on comment
 - [Jun](https://github.com/eastend-street) - Comment 
