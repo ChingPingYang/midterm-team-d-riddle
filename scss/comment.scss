@@ -35,6 +35,31 @@
       }
     }
   }
+
+  .edit-comment-form {
+    input,
+    textarea {
+      width: 90%;
+    }
+    button {
+      background-color: transparent;
+      color: $primGreen;
+      border: 1px solid $primGreen;
+      margin-right: 10px;
+      font-size: 16px;
+      &:hover {
+        transition: 0.5s;
+        cursor: pointer;
+        color: $darkBlue;
+        background-color: $primGreen;
+      }
+    }
+
+    .wrap-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
   a {
     text-decoration: none;
   }
@@ -90,6 +115,9 @@
       .disagree {
         display: flex;
         align-items: center;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .agree {
