@@ -19,8 +19,8 @@ This is a riddle website that you can post and answer riddle. Also you can edit 
 - JavaScript
 
 # Authors
-- [Marcus](https://github.com/naoyama88)
-- [Tatsuya](https://github.com/tatsuya167)
-- [Yesl](https://github.com/Yesl92)
-- [James](https://github.com/ChingPingYang)
-- [Jun](https://github.com/eastend-street)
+- [Marcus](https://github.com/naoyama88) - Riddle detail, Like function
+- [Tatsuya](https://github.com/tatsuya167) - Create riddle
+- [Yesl](https://github.com/Yesl92) - Design
+- [James](https://github.com/ChingPingYang) - Riddle List, Design
+- [Jun](https://github.com/eastend-street) - Comment 
