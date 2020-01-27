@@ -46,6 +46,7 @@ We made CRUD function using Node.js, Express.js, MongoDB Atlas to manage riddle 
 <br/>
 
 # Authors
+We splitted tasks by function. Each person was in charge of UI to function so everyone made front-end and back-end.
 - [Marcus](https://github.com/naoyama88) - Riddle detail, Like function
 - [Tatsuya](https://github.com/tatsuya167) - Create riddle
 - [Yesl](https://github.com/Yesl92) - Design
