@@ -38,18 +38,17 @@ class Comment {
   }
 
   static getOneComment(commentId) {
-    return database.getDB().collection('comments').findOne({ _id: new mongodb.ObjectId(commentId) })
-        
+    return database.getDB().collection('comments').findOne({ _id: new mongodb.ObjectId(commentId) });
   }
 
-  static deleteComment(id) {
+  static async deleteComment(id) {
     return database
       .getDB()
       .collection("comments")
       .deleteOne({ _id: new mongodb.ObjectId(id) });
   }
 
-  static deleteAllComment(riddleId) {
+  static async deleteAllComment(riddleId) {
     return database
       .getDB()
       .collection("comments")

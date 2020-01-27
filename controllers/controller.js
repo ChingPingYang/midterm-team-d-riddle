@@ -21,19 +21,19 @@ exports.postRiddle = (req, res, next) => {
     req.body.author,
     req.body.title,
     req.body.content,
-    util.getRandomBgImg()
+    util.getRandomBgImg(),
+    0,
+    new Date()
   );
-  riddle.saveRiddle();
+  riddle.save();
   res.redirect("/");
 };
 
 exports.detailRiddle = (req, res, next) => {
-  // prepare background image
   const riddleId = req.params.riddleId;
   const isEditing = req.query.edit;
 
-
-  Riddle.getOne(riddleId).then(riddle => {
+  Riddle.get(riddleId).then(riddle => {
     riddle.date = util.getFormattedDate(riddle.date);
     const bgImgFile = riddle.image_url || util.getRandomBgImg();
     Comment.getAllComment().then(comments => {
@@ -52,8 +52,8 @@ exports.detailRiddle = (req, res, next) => {
 
 exports.deleteRiddle = async (req, res, next) => {
   const riddleId = req.body.riddleId;
-  await Comment.deleteAllComment(riddleId); // TODO: fix await to start those request at the same time.
-  await Riddle.deleteRiddle(riddleId);
+  Comment.deleteAllComment(riddleId);
+  await Riddle.delete(riddleId);
   res.redirect("/");
 };
 
@@ -92,6 +92,7 @@ exports.commentVote = async (req, res, next) => {
   await Comment.voteComment(id, value)
   res.redirect(`/riddles/${riddle_id}`)
 }
+
 exports.editComment = (req, res, next) => {
   res.redirect(
     url.format({

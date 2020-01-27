@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/riddle_detail.css">
-    <link rel="stylesheet" href="/css/comment.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Mono:100,100i&display=swap" rel="stylesheet">
-    <title>Detail | Riddle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/riddle_detail.css">
+  <link rel="stylesheet" href="/css/comment.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Mono:100,100i&display=swap" rel="stylesheet">
+  <title>Detail | Riddle</title>
 </head>
 <body>
-    <%- include('partials/nav') -%>
-    <div class="riddle-detail-container" style="background-image: url('<%= bgImgFile %>');">
-        <div class="riddle-detail">
-            <h1 class="title"><%= riddle.title %></h1>
-            <div class="riddle-info">
-                <div class="author">Author: <%= riddle.author %></div>
-                <div class="date"><%= riddle.date %></div>
-            </div>
-            <p class="content"><%= riddle.riddle %></p>
-            <div class="form-like-container">
-                <form action='/like' id="like" method='POST'>
-                    <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
-                    <div class="like-button" onclick="document.getElementById('like').submit();">
-                        <input type="hidden" name="imgUrl" value="<%= bgImgFile %>">
-                        <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.7226 4.41603L12 4.60093L12.2774 4.41603L17.9667 0.623115L23.5 5.23419V11.7658L12 21.3491L0.5 11.7658V5.23419L6.03329 0.623116L11.7226 4.41603Z" stroke="#46FFA6"/>
-                        </svg>
-                        <h1 class="like-count"><%= riddle.like %></h1>
-                    </div>
-                </form>
-            </div>
-            <div class="form-delete-container">
-                <form action='/delete' method='POST'>
-                    <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
-                    <button class="delete-button" name='delete'>DELETE</button>
-                </form>
-            </div>
-          </form>
-        </div>
+  <%- include('partials/nav') -%>
+  <div class="riddle-detail-container" style="background-image: url('<%= bgImgFile %>');">
+    <div class="riddle-detail">
+      <h1 class="title"><%= riddle.title %></h1>
+      <div class="riddle-info">
+        <div class="author">Author: <%= riddle.author %></div>
+        <div class="date"><%= riddle.date %></div>
+      </div>
+      <p class="content"><%= riddle.riddle %></p>
+      <div class="form-like-container">
+        <form action='/like' id="like" method='POST'>
+          <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+          <div class="like-button" onclick="document.getElementById('like').submit();">
+            <input type="hidden" name="imgUrl" value="<%= bgImgFile %>">
+            <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.7226 4.41603L12 4.60093L12.2774 4.41603L17.9667 0.623115L23.5 5.23419V11.7658L12 21.3491L0.5 11.7658V5.23419L6.03329 0.623116L11.7226 4.41603Z" stroke="#46FFA6"/>
+            </svg>
+            <h1 class="like-count"><%= riddle.like %></h1>
+          </div>
+        </form>
+      </div>
+      <div class="form-delete-container">
+        <form action='/delete' method='POST'>
+          <input type='hidden' name='riddleId' value='<%= riddle._id %>'>
+          <button class="delete-button" name='delete'>DELETE</button>
+        </form>
       </div>
     </div>
-    <%- include('comment') -%>
-  </body>
+  </div>
+  <%- include('comment') -%>
+</body>
 </html>
