@@ -10,6 +10,7 @@ This is a riddle website that you can post and answer riddle. Also you can edit 
 
 # Technologies
 - Node.js
+- Express.js
 - ejs
 - MongoDB atlas
 - HTML
