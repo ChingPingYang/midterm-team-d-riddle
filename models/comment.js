@@ -37,6 +37,20 @@ class Comment {
       });
   }
 
+  static getRelatedComment(riddleId) {
+    return database
+      .getDB()
+      .collection("comments")
+      .find({riddle_id: riddleId})
+      .toArray()
+      .then(result => {
+        return result;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   static getOneComment(commentId) {
     return database.getDB().collection('comments').findOne({ _id: new mongodb.ObjectId(commentId) });
   }
