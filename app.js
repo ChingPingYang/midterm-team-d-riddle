@@ -1,8 +1,8 @@
-const PORT = process.env.PORT || 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const database = require('./util/database');
+const PORT = process.env.PORT || 3000;
 const router = require('./routes/route');
 
 const app = express();
