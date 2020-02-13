@@ -4,7 +4,7 @@ let db;
 
 exports.mongoConnect = callback => {
   MongoClient.connect(
-    `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.CLUSTER_NAME}/test?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.CLUSTER_NAME}/riddle?retryWrites=true&w=majority`
   )
     .then(client => {
       db = client.db("riddle");
