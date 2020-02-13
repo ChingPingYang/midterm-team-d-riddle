@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -16,5 +17,5 @@ app.use(router);
 app.use(express.static('./public'));
 
 database.mongoConnect(() => {
-    app.listen(3000);
+    app.listen(PORT);
 });
