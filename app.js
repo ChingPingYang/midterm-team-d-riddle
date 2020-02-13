@@ -17,5 +17,8 @@ app.use(router);
 app.use(express.static('./public'));
 
 database.mongoConnect(() => {
-    app.listen(PORT);
+    console.log('Connected to DB...')
+    app.listen(PORT, ()=> {
+        console.log('Server is up and running...')
+    });
 });
