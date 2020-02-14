@@ -21,6 +21,7 @@
   </div>
   <% } %> <% comments.forEach( comment => {%> <% if(comment.riddle_id ==
   riddle._id){%>
+  
   <div class="each-comment">
     <% if(editComment && editCommentId == comment._id){ %>
     <form action="" method="POST" class="edit-comment-form">
@@ -37,9 +38,7 @@
         cols="20"
         rows="5"
         placeholder="How do you think?"
-      >
-      <%= comment.comment %>
-      </textarea>
+      ><%= comment.comment %></textarea>
       <div class="wrap-button">
         <button
           class="button button-blue"
@@ -70,22 +69,22 @@
       <%= comment.comment %>
     </div>
     <div class="wrap-vote">
-      <form action="/comment/vote" id="agree" method="POST">
+      <form action="/comment/vote" id="agree_<%= comment._id%>" method="POST">
         <input type="hidden" name="id" value="<%= comment._id%>" />
         <input type="hidden" name="vote" value="agree" />
         <input type="hidden" name="riddle_id" value="<%= riddle._id%>" />
-        <div class="agree" onclick="document.getElementById('agree').submit();">
+        <div class="agree" onclick="document.getElementById('agree_<%= comment._id%>').submit();">
           <%- include('partials/comment/agreeSvg') -%>
           <div class="vote-text">agree</div>
         </div>
       </form>
-      <form action="/comment/vote" id="disagree" method="POST">
+      <form action="/comment/vote" id="disagree_<%= comment._id%>" method="POST">
         <input type="hidden" name="id" value="<%= comment._id%>" />
         <input type="hidden" name="vote" value="disagree" />
         <input type="hidden" name="riddle_id" value="<%= riddle._id%>" />
         <div
           class="disagree"
-          onclick="document.getElementById('disagree').submit();"
+          onclick="document.getElementById('disagree_<%= comment._id%>').submit();"
         >
           <%- include('partials/comment/disagreeSvg') -%>
           <div class="vote-text">disagree</div>

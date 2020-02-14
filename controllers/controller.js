@@ -88,6 +88,7 @@ exports.createComment = (req, res, next) => {
 
 exports.commentVote = async (req, res, next) => {
   const { id, vote, riddle_id } = req.body;
+  console.log("controller: ",id)
   let value = vote == 'agree'? 1: -1;
   await Comment.voteComment(id, value)
   res.redirect(`/riddles/${riddle_id}`)

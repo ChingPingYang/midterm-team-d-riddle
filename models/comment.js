@@ -66,6 +66,7 @@ class Comment {
   }
 
   static async voteComment(id, value) {
+    // console.log('Comment: ', id)
     let comment = await this.getOneComment(id)
     let newValue = comment.vote + value
     if(newValue <= 0) {
